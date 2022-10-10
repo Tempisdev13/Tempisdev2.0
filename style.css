@@ -534,3 +534,8 @@ right: 20px;
     margin-right: auto;
     margin-left: auto;
     }
+
+    .confidencial{
+        font-size: 12px;
+        color: #1D1F1E;
+    }
