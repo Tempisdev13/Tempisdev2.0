@@ -17,23 +17,30 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/WiFuchs/chatty@v1.1/chat-style.css">
+    <script src="https://cdn.jsdelivr.net/gh/WiFuchs/chatty@v1.1/chatModule.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@1.2.2/velocity.ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.2/velocity.min.js"></script>
+
     <title>Tempisdev</title>
 </head>
 
 <body>
 
     <nav class="navbar fixed-top">
-        <div class="container">
+        <div class="container-fluid">
             <a class="navbar-brand " href="#">
                 <img src="assets/img/jc-logo.png" alt="" width="60" class="img-nav">
             </a>
             <div class="d-flex flex-row">
-                <div class="p-2 d-none d-sm-block  d-sm-none d-md-block"><a href="#">Inicio</a></div>
-                <div class="p-2 d-none d-sm-block  d-sm-none d-md-block"><a href="#abt">Sobre mi</a></div>
-                <div class="p-2 d-none d-sm-block  d-sm-none d-md-block"><a href="#xpe">Portafolio</a></div>
+                <div class="p-2 d-none d-sm-block  d-sm-none d-md-block"><a href="#">Home</a></div>
+                <div class="p-2 d-none d-sm-block  d-sm-none d-md-block"><a href="#abt">About me</a></div>
+                <div class="p-2 d-none d-sm-block  d-sm-none d-md-block"><a href="#xpe">Designs</a></div>
             </div>
-            <a href="mailto:tempisdev@gmail.com?subject=Hola! me gustaría contactar contigo.">
-                <button class="fourth"><span class="txt-r" id="txt-r">Decargar
+            <a href="https://drive.google.com/file/d/1xipU10zTZYcG4NdTzQgidzJsHVhRLb1z/view?usp=sharing"
+                target="_blank">
+                <button class="fourth"><span class="txt-r" id="txt-r">Download
                         cv</span></button>
             </a>
         </div>
@@ -42,9 +49,9 @@
         <div class="container">
             <div class="row ps">
                 <div class="col-sm-12 col-md-6  align-self-center">
-                    <p class="p1">Hola, soy</p>
+                    <p class="p1">Hello, I´m </p>
                     <P class="p2">JUAN CARLOS</P>
-                    <P class="p3">Diseñador UX/UI</P>
+                    <P class="p3">UX/UI Designer</P>
                     <div class="row row-cols-md-3 row-cols-sm-3 row-lg-4">
                         <div class="col-auto">
 
@@ -95,12 +102,13 @@
     </section>
 
 
+   
 
     <div class="container-fluid blanco" id="abt">
         <div class="container">
             <div class="row ali2">
                 <div class="col-sm-12 col-md-4 align-self-center ali">
-                    <p class="bit">UN POCO<br> <span class="about">SOBRE MI</span></p>
+                    <p class="bit">A LITTLE<br> <span class="about">ABOUT ME</span></p>
                     <img src="assets/img/jc-logo.png" alt="">
                     <img src="img/jcblack.png" alt="" srcset="" class="cenb">
                 </div>
@@ -111,15 +119,16 @@
 
                         <div class="tab-pane fade show active" id="pills-home" role="tabpanel"
                             aria-labelledby="pills-home-tab">
-                            <p id="ready">Estoy listo para todo</p>
+                            <p id="ready">I'm ready for anything</p>
 
-                            <p id="description">Egresado de la carrera de Ingeniería en Sistemas Computacionales,
-                                apasionado por el <strong>Diseño UX y Diseño UI</strong>, tengo el interés por
-                                profundizar y entender los problemas y curiosidad por averiguar por qué y cómo
-                                resolverlos.</p>
-                            <p id="description">Me considero una persona capaz y proactiva, con mucho interés por
-                                aprender cada día más, me encanta relacionarme con personas y trabajar en equipo. </p>
-                            <p id="text-img">Herramientas de diseño</p>
+                            <p id="description">
+                                Graduated from the Computer Systems Engineering career, passionate about the <strong>UX
+                                    Design and UI Design</strong>, I am interested in digging deeper and understanding
+                                the problems and I am curious to know why and how to solve them.</p>
+                            <p id="description">I consider myself a capable and proactive person, with a lot of interest
+                                in learning more every day, I love interacting with people and working as a team.
+                            </p>
+                            <p id="text-img">Design tools</p>
                             <div class="row row-cols-md-4 row-cols-sm-2">
                                 <div class="col nombred"><img src="assets/img/herramientas/img-xd.png" alt=""
                                         class="im-herra"></div>
@@ -138,7 +147,7 @@
 
                             </div>
 
-                            <p id="text-img">Habilidades de diseño</p>
+                            <p id="text-img">Design skills</p>
                             <div class="row row-cols-md-4 row-cols-sm-2">
 
 
@@ -160,7 +169,7 @@
                                 </div>
 
 
-                               
+
 
                                 <div class="col nombred
                                 d-none d-xs-none">
@@ -170,7 +179,7 @@
                                         <div class="col-12">Front-end</div>
                                     </div>
                                 </div>
-                              
+
                                 <div class="col nombred">
                                     <div class="row">
                                         <div class="col-12"><img src="assets/img/habilidades/img-prototype.png"
@@ -178,7 +187,7 @@
                                         <div class="col-12">Prototype</div>
                                     </div>
                                 </div>
-                           
+
                                 <div class="col nombred">
                                     <div class="row">
                                         <div class="col-12"><img src="assets/img/habilidades/img-research.png"
@@ -210,8 +219,8 @@
                                         <div class="col-12">Front-end</div>
                                     </div>
                                 </div>
-                                
-                             
+
+
                                 <div class="col nombred
                                 d-block d-sm-none">
                                     <div class="row">
@@ -234,17 +243,34 @@
 
 
 
-            <a href="#" class="btn-flotante2 animate__animated animate__bounce  		
+         <!--   <a href="#" class="btn-flotante2 animate__animated animate__bounce  		
         d-none d-xl-block"><i class="fab fa-behance"></i>></a>
-            <a href="https://www.behance.net/juancalopezg" class="btn-flotante animate__animated animate__bounce">Conoce
-                más de mi</i></a>
-
-
-
-
+            <a href="https://drive.google.com/file/d/1mlllPg99FyUhzDeBtfbePqqC1vOC8PfQ/view?usp=sharing"
+                class="btn-flotante animate__animated animate__bounce" target="_blank">Know more about me</i></a>
         </div>
+-->
 
-        <div class="bg-apps">
+        
+  <section class="fondo-principal-random chat">
+    <div class="container">
+        
+      <div class="row">
+        <div class="col-12 text-center"  style="background-color: #F7B32B; border-radius: 10px 10px 0px 0px;">
+            <p style="color: #fff; margin-top: 10px;">Carlos Bot</p>
+        </div>
+        <div class="co">
+            <div class="col-12">
+                <div id="chat-context"></div>
+              </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+        <div class="bg-apps" id="xpe">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-xl-4 col-md-4 col-sm-12 ">
@@ -274,20 +300,19 @@
                                         <img src="assets/img/Manos-en-accion/manosenaccion .png" alt=""
                                             class="img-fluid">
                                         <div class="col-xl-8 col-md-8 col-sm-12  txt-todo">
-                                            <p class="contexto">Contexto</p>
+                                            <p class="contexto">Context</p>
                                             <div class="des-app">
-                                                <p>El municipio de <strong>El Mante</strong>
-                                                    requeria lanzar una aplicacion con el fin del lograr unir a la
-                                                    comunidad de la ciudad para apoyar eventos de caridad.</p>
-                                                <p>En este caso tu como usuario podias realizar dos acciones, el pedir
-                                                    ayuda y el ofrecerte a ayudar.</p>
-                                                <p>En este proyecto me desenvolví como diseñador <strong>UX/UI</strong>
-                                                    trabajando con distintas herramientas, como lo fueron <strong>Adobe
-                                                        XD</strong> y <strong>Adobe Ilustrator</strong>.</p>
-                                                <p>Asi mismo trabaje como desarrollador <strong>Front-end</strong>
-                                                    utilizando como framework <strong>Flutter</strong> en el cual tuve
-                                                    que tomar una capacitación de 2 semanas para poder desarrollar el
-                                                    proyecto.</p>
+                                                <p>The municipality of <strong>El Mante</strong>
+                                                    needed to launch an application in order to unite the community of
+                                                    the city to support charity events.</p>
+                                                <p>In this case, you as a user could perform two actions, asking for
+                                                    help and offering to help.</p>
+                                                <p>In this project I worked as a <strong>UX/UI designer</strong> working
+                                                    with different tools, such as Adobe XD and Adobe Illustrator.
+                                                <p>Likewise, I worked as a Front-end developer using Flutter as a
+                                                    framework in which I had to take a 2-week training to be able to
+                                                    develop the project.
+                                                </p>
                                             </div>
                                         </div>
                                         <div class="col-xl-4 col-md-4 col-sm-12   txt-todo">
@@ -311,178 +336,207 @@
                                 <div class="tab-pane fade" id="v-pills-profile" role="tabpanel"
                                     aria-labelledby="v-pills-profile-tab">
                                     <div class="tab-pane fade show active inf-t" id="v-pills-home" role="tabpanel"
-                                    aria-labelledby="v-pills-home-tab">
-                                    <div class="row">
-                                        <p class="title-tab">Kabuum!</p>
-                                        <img src="assets/img/Kabum/fondo-kabum-2.png" alt=""
-                                            class="img-fluid">
-                                        <div class="col-xl-18 col-md-12 col-sm-12  txt-todo">
-                                            <p class="contexto">Contexto</p>
-                                            <div class="des-app">
-                                                <p>El <strong>Instituto Técnologico Superior de El Mante</strong>
-                                                    requeria cubrir una necesidad a la hora de presentar una dinamica en su feria vocacional.</p>
-                                                <p>La dinamica se trataba de responder ciertas preguntas en un juego llamado <strong>Kahoot!</strong></p>
-                                                <p>El problema es que en el Técnologico no se cuenta con buena señal de internet y gracias a eso nació <strong>Kabum!</strong>, procedimos a lanzar una nueva app con el mismo modo de juego el cual permitia:</p>
-                                                <ul>
-                                                    <li>Crear salas</li>
-                                                    <li>Crear cuestionarios con sus respuestas</li>
-                                                    <li>Usar cuestionarios ya hechos por otras áreas</li>
-                                                    <li>Responder y mostrar podio en tiempo real</li>
-                                                    <li>Jugar sin necesidad de internet <strong>Hilos</strong> </li>
-                                                </ul>
+                                        aria-labelledby="v-pills-home-tab">
+                                        <div class="row">
+                                            <p class="title-tab">Kabuum!</p>
+                                            <img src="assets/img/Kabum/fondo-kabum-2.png" alt="" class="img-fluid">
+                                            <div class="col-xl-18 col-md-12 col-sm-12  txt-todo">
+                                                <p class="contexto">Context</p>
+                                                <div class="des-app">
+                                                    <p>
+                                                        The <strong>Higher Technological Institute of El Mante</strong>
+                                                        required to cover a need when presenting a dynamic in its
+                                                        vocational fair.</p>
+                                                    <p>The dynamic was about answering certain questions in a game
+                                                        called Kahoot! </p>
+                                                    <p>The problem is that the Técnologico does not have a good internet
+                                                        signal and thanks to that it was born <strong>Kabum!</strong>,
+                                                        We proceeded to launch a new app with the same game mode which
+                                                        allowed:</p>
+                                                    <ul>
+                                                        <li>Create rooms</li>
+                                                        <li>Create quizzes with your answers</li>
+                                                        <li>Use questionnaires already made by other areas</li>
+                                                        <li>Answer and show podium in real time</li>
+                                                    </ul>
+                                                    <p>In addition to working as a UX / UI designer, I worked as a front
+                                                        end developer, using In addition to working as a UX / UI
+                                                        designer, I worked as a front end developer, using <strong>HTML,
+                                                            CSS, JAVASCRIPT</strong> and
+                                                        <strong>ANGULAR</strong>.</strong></p>
+                                                </div>
                                             </div>
+
+
                                         </div>
-                                        
-                                        
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-xl-6 col-md-6 col-sm-6"><img
-                                                src="assets/img/Kabum/Web-1920-–-34.webp" alt=""
-                                                class="img-fluid portada-tab"></div>
-                                       
-                                                <div class="col-xl-6 col-md-6 col-sm-6"><img
+                                        <div class="row justify-content-center">
+                                            <div class="col-xl-6 col-md-6 col-sm-6"><img
+                                                    src="assets/img/Kabum/Web-1920-–-34.webp" alt=""
+                                                    class="img-fluid portada-tab"></div>
+
+                                            <div class="col-xl-6 col-md-6 col-sm-6"><img
                                                     src="assets/img/Kabum/Web-1920-–-2.webp" alt=""
                                                     class="img-fluid portada-tab"></div>
-                                           
-    
+
+
+                                        </div>
                                     </div>
-                                </div></div>
+                                </div>
                                 <div class="tab-pane fade" id="v-pills-messages" role="tabpanel"
                                     aria-labelledby="v-pills-messages-tab">
                                     <div class="tab-pane fade show active inf-t" id="v-pills-home" role="tabpanel"
-                                    aria-labelledby="v-pills-home-tab">
-                                    <div class="row">
-                                        <p class="title-tab">Esteciapp</p>
-                                        <img src="assets/img/Esteciapp/fondo-esteci.png" alt=""
-                                            class="img-fluid est-app">
-                                        <div class="col-xl-8 col-md-8 col-sm-12  txt-todo">
-                                            <p class="contexto">Contexto</p>
-                                            <div class="des-app">
-                                               <p>Un conocido, dueño de multiples estacionamientos en <strong>El Mante</strong> requeria una aplicacion para tener un mejor control de los ingresos y salidas de autos de su estacionamiento</p>
-                                               <p>Gracias a esta necesidad surgió <strong>Esteciapp</strong> una aplicación móvil que permite tener:</p>
-                                               <ul>
-                                                <li>Control de accesos</li>
-                                                <li>Control de salidas</li>
-                                                <li>Notificaciones para avisar tu tiempo</li>
-                                                <li>Conocer si hay lugares disponibles para aparcar</li>
-                                                <li>Control de gastos</li>
-                                               </ul>
-                                               <p>Se ofreció una solucion nunca antes vista en la localidad dando como resultado una aplicacion <strong>Inovadora</strong> facil de usar y accesible para todos</p>
-                                               <p>Se buscó ofrecer un diseño sencillo, intuitivo y a la vez atractivo para las personas</p>
+                                        aria-labelledby="v-pills-home-tab">
+                                        <div class="row">
+                                            <p class="title-tab">Esteciapp</p>
+                                            <img src="assets/img/Esteciapp/fondo-esteci.png" alt=""
+                                                class="img-fluid est-app">
+                                            <div class="col-xl-8 col-md-8 col-sm-12  txt-todo">
+                                                <p class="contexto">Context</p>
+                                                <div class="des-app">
+                                                    <p>A well-known owner of multiple parking lots in <strong>El
+                                                            Mante</strong> requires an application to have better
+                                                        control of the entry and exit of cars from his parking lot</p>
+                                                    <p>Thanks to this need, <strong>Esteciapp</strong> emerged as a
+                                                        mobile application that allows you to have:</p>
+                                                    <ul>
+                                                        <li>Access control</li>
+                                                        <li>Output control</li>
+                                                        <li>Notifications to warn your time</li>
+                                                        <li>Find out if there are places available to park</li>
+                                                        <li>Expense control
+                                                        </li>
+                                                    </ul>
+                                                    <p>A solution never seen before in the locality was offered,
+                                                        resulting in an <strong>Innovative</strong> application that is
+                                                        easy to use and accessible to all.</p>
+                                                    <p>We sought to offer a simple, intuitive and at the same time
+                                                        attractive design for people.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-4 col-md-4 col-sm-12   txt-todo">
+                                                <img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_1.webp"
+                                                    class="img-fluid portada-tab" alt="">
                                             </div>
                                         </div>
-                                        <div class="col-xl-4 col-md-4 col-sm-12   txt-todo">
-                                            <img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_1.webp" class="img-fluid portada-tab"
-                                                alt="">
+                                        <div class="row justify-content-center">
+                                            <div class="col-xl-3 col-md-3 col-sm-6"><img
+                                                    src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_3.webp"
+                                                    alt="" class="img-fluid portada-tab"></div>
+                                            <div class="col-xl-3 col-md-3 col-sm-6 "><img
+                                                    src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_5.webp"
+                                                    alt="" class="img-fluid portada-tab-2"></div>
+                                            <div class="col-xl-3 col-md-3 col-sm-6 "><img
+                                                    src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_4.webp"
+                                                    alt="" class="img-fluid portada-tab"></div>
+
                                         </div>
                                     </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-xl-3 col-md-3 col-sm-6"><img
-                                            src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_3.webp" alt=""
-                                            class="img-fluid portada-tab"></div>
-                                            <div class="col-xl-3 col-md-3 col-sm-6 "><img
-                                                src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_5.webp" alt=""
-                                                    class="img-fluid portada-tab-2"></div>
-                                        <div class="col-xl-3 col-md-3 col-sm-6 "><img
-                                            src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_4.webp" alt=""
-                                                class="img-fluid portada-tab"></div>
-
-                                    </div>
-                                </div></div>
+                                </div>
                                 <div class="tab-pane fade" id="v-pills-settings" role="tabpanel"
                                     aria-labelledby="v-pills-settings-tab">
                                     <div class="tab-pane fade show active inf-t" id="v-pills-home" role="tabpanel"
-                                    aria-labelledby="v-pills-home-tab">
-                                    <div class="row">
-                                        <p class="title-tab">Vitrocar</p>
-                                        <img src="assets/img/Vitrocar/fondo.png" alt=""
-                                            class="img-fluid">
-                                            <p class="confidencial"> Para cumplir con mi acuerdo de confidencialidad, he omitido información confidencial. Toda la información es mía y no refleja necesariamente las opiniones de <strong>Vitrocar</strong>.</p>
-                                        <div class="col-xl-12 col-md-12 col-sm-12  txt-todo">
-                                            <p class="contexto">Contexto</p>
-                                            <div class="des-app">
-                                                <p><Strong>Vitrocar</Strong> nace con la fusión de dos grandes cadenas de instalación de cristal automotriz, Vitrocar, S.A. de C.V. y Cristales Automotrices, S.A. de C.V. las cuales cuentan con más de 30 años de experiencia siempre cuidando los estándares de calidad y seguridad.</p>
-                                                <p>Se buscaba dar un nuevo diseño a su página principal, respetando colores, imagenes y tipografía.</p>
-                                                <p>En este proyecto solo se trabajo en el <strong>Diseño UI</strong> entregando el proyecto al área de programadores para que apliquen los cambios directamente a su web site.</p>
+                                        aria-labelledby="v-pills-home-tab">
+                                        <div class="row">
+                                            <p class="title-tab">Vitrocar</p>
+                                            <img src="assets/img/Vitrocar/fondo.png" alt="" class="img-fluid">
+                                            <p class="confidencial"> In order to comply with my confidentiality
+                                                agreement, I have withheld confidential information. All the information
+                                                is mine and does not necessarily reflect the opinions of
+                                                <strong>Vitrocar</strong>.</p>
+                                            <div class="col-xl-12 col-md-12 col-sm-12  txt-todo">
+                                                <p class="contexto">Context</p>
+                                                <div class="des-app">
+                                                    <p><Strong>Vitrocar</Strong> was born with the merger of two large
+                                                        automotive glass installation chains, Vitrocar, S.A. of C.V. and
+                                                        Automobile Crystals, S.A. of C.V. which have more than 30 years
+                                                        of experience always taking care of quality and safety
+                                                        standards.</p>
+                                                    <p>The aim was to give a new design to its main page, respecting
+                                                        colors, images and typography.</p>
+                                                    <p>In this project we only worked on the <strong>UI Design</strong>,
+                                                        delivering the project to the area of ​​developers so that they
+                                                        apply the changes directly to their web site.</p>
+                                                </div>
                                             </div>
+
                                         </div>
-                                     
-                                    </div>
-                                    <div class="row justify-content-center">
-                                        <div class="col-xl-6 col-md-6 col-sm-6"><img
-                                                src="assets/img/Vitrocar/Web_1920_226128147_10.webp" alt=""
-                                                class="img-fluid portada-tab"></div>
-                                       
-                                                <div class="col-xl-6 col-md-6 col-sm-6"><img
+                                        <div class="row justify-content-center">
+                                            <div class="col-xl-6 col-md-6 col-sm-6"><img
+                                                    src="assets/img/Vitrocar/Web_1920_226128147_10.webp" alt=""
+                                                    class="img-fluid portada-tab"></div>
+
+                                            <div class="col-xl-6 col-md-6 col-sm-6"><img
                                                     src="assets/img/Vitrocar/Web_1920_226128147_11.webp" alt=""
                                                     class="img-fluid portada-tab"></div>
-                                           
+
+                                        </div>
                                     </div>
-                                </div></div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                
+
             </div>
-            
+
         </div>
 
-        
+
 
 
     </div>
+    <div class="container-fluid" style="background-color: #f1f1f1;">
+        <div>
+            <footer class="text-center text-white" style="background-color: #f1f1f1;">
+                <!-- Grid container -->
+                <div class="container pt-4">
+                    <!-- Section: Social media -->
 
+                    <img src="assets/img/jc-logo.png" height="45px" alt="">
 
-    <div class="container-fluid"><div class="bg-appss">
-        <footer class="text-center text-white" style="background-color: #f1f1f1;">
-            <!-- Grid container -->
-            <div class="container pt-4">
-                <!-- Section: Social media -->
-    
-                <img src="assets/img/jc-logo.png" height="45px" alt="">
-    
-                <section class="mb-4">
-                    <!-- Facebook -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-                        href="https://www.facebook.com/juancarlos.lopezgonzalez3/" role="button"
-                        target="_blank" data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
-    
-                    <!-- Twitter -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/JCaarlos13"
-                    target="_blank" role="button" data-mdb-ripple-color="dark"><i class="fab fa-twitter"></i></a>
-    
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://www.behance.net/juancalopezg"
-                    target="_blank"   role="button" data-mdb-ripple-color="dark"><i class="fab fa-behance"></i>
-                    </a>
-    
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-                        href="https://www.instagram.com/jcaarlos13/?hl=es" role="button" data-mdb-ripple-color="dark"><i
-                          target="_blank"  class="fab fa-instagram"></i></a>
-    
-                    <!-- Linkedin -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1"
-                        href="https://www.linkedin.com/in/juan-carlos-lopez-gonzalez-91872b20b/" role="button"
-                        target="_blank" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
-                    <!-- Github -->
-                    <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/Tempisdev"
-                        role="button" target="_blank" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
-                </section>
-                <!-- Section: Social media -->
-            </div>
-            <!-- Grid container -->
-    
-            <!-- Copyright -->
-            <div class="text-center text-dark p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-                © 2020 Copyright: <b>Tempisdev</b>
-            </div>
-            <!-- Copyright -->
-        </footer>
+                    <section class="mb-4">
+                        <!-- Facebook -->
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.facebook.com/juancarlos.lopezgonzalez3/" role="button" target="_blank"
+                            data-mdb-ripple-color="dark"><i class="fab fa-facebook-f"></i></a>
+
+                        <!-- Twitter -->
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://twitter.com/JCaarlos13"
+                            target="_blank" role="button" data-mdb-ripple-color="dark"><i
+                                class="fab fa-twitter"></i></a>
+
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.behance.net/juancalopezg" target="_blank" role="button"
+                            data-mdb-ripple-color="dark"><i class="fab fa-behance"></i>
+                        </a>
+
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.instagram.com/jcaarlos13/?hl=es" role="button"
+                            data-mdb-ripple-color="dark"><i target="_blank" class="fab fa-instagram"></i></a>
+
+                        <!-- Linkedin -->
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1"
+                            href="https://www.linkedin.com/in/juan-carlos-lopez-gonzalez-91872b20b/" role="button"
+                            target="_blank" data-mdb-ripple-color="dark"><i class="fab fa-linkedin"></i></a>
+                        <!-- Github -->
+                        <a class="btn btn-link btn-floating btn-lg text-dark m-1" href="https://github.com/Tempisdev"
+                            role="button" target="_blank" data-mdb-ripple-color="dark"><i class="fab fa-github"></i></a>
+                    </section>
+                    <!-- Section: Social media -->
+                </div>
+                <!-- Grid container -->
+
+                <!-- Copyright -->
+                <div class="text-center text-dark p-3">
+                    © 2022 Copyright: <b>Tempisdev</b>
+                </div>
+                <!-- Copyright -->
+            </footer>
+        </div>
     </div>
-</div>
- 
-    
-    
+
+
+
 
 
 
@@ -491,7 +545,93 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
-
 </body>
+
+
+<script>
+
+    var tags = [{
+      type: "input",
+      tag: "text",
+      name: "name",
+      "chat-msg": "Hola, soy el bot de Carlos y estoy para apoyarte, cual es tu nombre?",
+      //  validator: function(input) {
+      //	return input == "Sandeep"
+      //},
+      // invalid: "Your name must be Sandeep to continue"
+    },
+    {
+      type: "input",
+      tag: "radio",
+      name: "color",
+      "chat-msg": "Mucho gusto, {{name}} ¿Cúal es tu consulta?",
+      children: [{
+        value: "1",
+        text: "Contactar a Carlos",
+      },
+      {
+        value: "2",
+        text: "¿Qué sabe hacer Carlos?",
+      },      
+      {
+        value: "3",
+        text: "Conoce más a carlos",
+      }
+      ]
+    },
+    {
+      type: "msg",
+      "chat-msg": "Perfecto",
+      delay: 1250,
+      callback: function () {
+        var name = Chat.getData().name;
+        Chat.addTags([{
+          type: "input",
+          tag: "radio",
+          name: "tricked",
+          "chat-msg": "What's your REAL name???",
+          children: [{
+            value: true,
+            text: "Lord Voldemort"
+          },
+          {
+            value: false,
+            text: name
+          },
+          {
+            value: true,
+            text: "Mr. V-Mort"
+          }
+          ],
+          success: function (data) {
+            var msg = data.tricked == 'true' ? "No chatbot for you, Mr. Voldemort!" : "Oh... I guess {{color}} isn't just for evil wizards!";
+  
+            Chat.addTags([{
+              type: "msg",
+              "chat-msg": msg,
+              delay: 2000
+            }]);
+          }
+        }])
+      }
+    },
+    {
+      type: "msg",
+      "chat-msg": "Gacias por charlar conmigo."
+    }
+    ];
+  
+    function customTagRender() {
+      $('#ui-control').prepend('<div id="custom-input">Custom input! Practically, this would be a clickable map or image, or virtually anything that you can code up. Click the big button below to submit</div>');
+  
+      //This custom data would be set by user interaction in the real world
+      window.customData = "the possibilities are endless!";
+    }
+  
+    $(document).ready(function () {
+      Chat.start($('#chat-context'), tags);
+    });
+  
+  </script>
 
 </html>
