@@ -23,7 +23,6 @@
         .hero { padding: 160px 0 60px; background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%); }
         .display-1 { font-size: 5rem; line-height: 1; margin-bottom: 20px; min-height: 2.2em; }
         
-        /* Bento Grid: Herramientas y Habilidades */
         .bento-grid { padding: 40px 0 80px; }
         .bento-item { 
             background: white; border: 1px solid #e2e8f0; border-radius: 24px; 
@@ -41,7 +40,6 @@
             padding: 5px 12px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; margin: 4px;
         }
 
-        /* Trayectoria */
         .work-section { padding: 100px 0; background: #fcfdfe; }
         .nav-pills .nav-link {
             color: #718096; background: white; border: 1px solid #e2e8f0;
@@ -49,6 +47,8 @@
         }
         .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; }
         .project-card { background: white; border-radius: 30px; padding: 45px; border: 1px solid #e2e8f0; }
+        
+        .highlight-text { border-left: 4px solid var(--primary); padding-left: 15px; margin: 20px 0; font-style: italic; color: #4a5568; }
     </style>
 </head>
 <body>
@@ -66,11 +66,11 @@
                 <div class="col-md-7">
                     <h1 class="display-1">Soy <br><span id="typed" class="text-primary"></span></h1>
                     <p class="fs-5 text-muted mt-4 pe-md-5">
-                        Ingeniero de Sistemas que fusiona el rigor técnico con la psicología del diseño para crear productos digitales que no solo funcionan, sino que impactan en el mercado.
+                        Ingeniero de Sistemas con un enfoque híbrido en desarrollo de software y diseño UX/UI. Especializado en crear soluciones digitales escalables desde la arquitectura de código hasta la experiencia final del usuario.
                     </p>
                 </div>
-                <div class="col-md-5 mt-5 mt-md-0">
-                    <img src="foto-principal.webp" alt="Juan Carlos" class="img-fluid" style="max-width: 100%;">
+                <div class="col-md-5 mt-5 mt-md-0 text-center">
+                    <img src="foto-principal.webp" alt="Juan Carlos" class="img-fluid" style="max-width: 90%;">
                 </div>
             </div>
         </div>
@@ -79,12 +79,15 @@
     <section class="container py-5">
         <div class="row align-items-center">
             <div class="col-md-4">
-                <h2 class="fw-bold fs-1">Mi Perfil<br><span class="text-primary">Profesional</span></h2>
+                <h2 class="fw-bold fs-1">Sobre <br><span class="text-primary">mi perfil</span></h2>
             </div>
             <div class="col-md-8">
                 <p class="fs-5 text-muted">
-                    Graduado en <strong>Ingeniería en Sistemas Computacionales</strong>, me considero un apasionado por entender el "porqué" de los problemas para resolverlos mediante tecnología y diseño UX. Mi formación me permite liderar proyectos desde la visión comercial hasta la implementación técnica final.
+                    Graduado en <strong>Ingeniería en Sistemas Computacionales</strong>, poseo una sólida base técnica que complemento con una visión estratégica de negocio. Mi curiosidad por entender los problemas a profundidad me permite diseñar y desarrollar soluciones que optimizan procesos y generan rentabilidad.
                 </p>
+                <div class="highlight-text">
+                    Como Gerente de Ventas, he perfeccionado el arte de la persuasión técnica y negociación, logrando el cierre de más de 300 proyectos con una facturación superior a los $15M MXN.
+                </div>
             </div>
         </div>
     </section>
@@ -94,33 +97,32 @@
             <div class="col-md-8">
                 <div class="bento-item bento-dark">
                     <div class="d-flex justify-content-between mb-4">
-                        <i class="fas fa-terminal fa-3x text-primary"></i>
-                        <h4>Ingeniería & Código</h4>
+                        <i class="fas fa-code fa-3x text-primary"></i>
+                        <h4>Desarrollo Fullstack</h4>
                     </div>
-                    <p class="opacity-75">Desarrollo Fullstack con capacidad de crear arquitecturas escalables y seguras.</p>
+                    <p class="opacity-75">Creación de arquitecturas robustas para web y escritorio utilizando tecnologías modernas.</p>
                     <div class="mt-3">
-                        <span class="tool-tag-white">Angular</span><span class="tool-tag-white">PHP</span>
-                        <span class="tool-tag-white">MySQL</span><span class="tool-tag-white">TypeScript</span>
-                        <span class="tool-tag-white">Flutter</span><span class="tool-tag-white">React Native</span>
+                        <span class="tool-tag-white">PHP</span><span class="tool-tag-white">MySQL</span>
+                        <span class="tool-tag-white">Angular</span><span class="tool-tag-white">TypeScript</span>
+                        <span class="tool-tag-white">JS/HTML/CSS</span><span class="tool-tag-white">React Native</span>
                     </div>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="bento-item" style="background: #f0f7ff;">
-                    <h3 class="text-primary fw-bold">$15M+ MXN</h3>
-                    <p class="fw-bold mb-2">Visión Comercial</p>
-                    <p class="small text-muted">Gerencia de ventas con más de 300 proyectos cerrados, aplicando persuasión y negociación técnica.</p>
+                    <h4 class="fw-bold text-primary">Ventas & Liderazgo</h4>
+                    <p class="small text-muted mt-3">Persuasión técnica, cierre de contratos de alto valor y gestión de CRM para el cumplimiento de metas comerciales.</p>
                 </div>
             </div>
 
             <div class="col-md-5">
                 <div class="bento-item">
-                    <h4 class="mb-3"><i class="fas fa-palette me-2 text-primary"></i>Adobe & Diseño</h4>
-                    <p class="small text-muted">Dominio experto de herramientas creativas para comunicación visual y prototipado.</p>
+                    <h4 class="mb-3"><i class="fas fa-paint-brush me-2 text-primary"></i>Diseño & Adobe</h4>
+                    <p class="small text-muted">Dominio avanzado de la suite creativa para diseño gráfico, edición de video y prototipado.</p>
                     <div class="mt-2">
                         <span class="tool-tag">Photoshop</span><span class="tool-tag">Illustrator</span>
-                        <span class="tool-tag">After Effects</span><span class="tool-tag">XD</span>
+                        <span class="tool-tag">After Effects</span><span class="tool-tag">Adobe XD</span>
                         <span class="tool-tag">Corel Draw</span><span class="tool-tag">Figma</span>
                     </div>
                 </div>
@@ -130,8 +132,8 @@
                 <div class="bento-item">
                     <div class="d-flex justify-content-between align-items-center">
                         <div>
-                            <h4 class="mb-2">Sistemas Fotovoltaicos</h4>
-                            <p class="small text-muted mb-0">Desarrollo de software para cálculo de eficiencia y layout técnico de 8 paneles solares.</p>
+                            <h4 class="mb-2">Ingeniería Solar</h4>
+                            <p class="small text-muted">Desarrollo de software para cálculo de eficiencia y layout técnico de sistemas solares residenciales.</p>
                         </div>
                         <div class="text-center">
                             <span class="display-6 fw-bold text-primary">300+</span>
@@ -145,13 +147,13 @@
 
     <section class="work-section" id="work">
         <div class="container">
-            <h2 class="fw-bold mb-5 fs-1 text-center">Trayectoria <span class="text-primary">Profesional</span></h2>
+            <h2 class="fw-bold mb-5 fs-1 text-center">Experiencia <span class="text-primary">Profesional</span></h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="nav flex-column nav-pills" role="tablist">
                         <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#dinex">🏦 Dinex (Actualidad)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022-2024)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#secam">📒 Sección Amarilla (2020-2022)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022 - 2024)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#secam">📒 Sección Amarilla (2020 - 2022)</button>
                         <button class="nav-link" data-bs-toggle="pill" data-bs-target="#vector">📈 Vector Casa de Bolsa</button>
                     </div>
                 </div>
@@ -159,23 +161,23 @@
                     <div class="tab-content">
                         <div class="tab-pane fade show active project-card" id="dinex">
                             <h3 class="fw-bold">Dinex</h3>
-                            <p class="text-primary fw-bold">Diseñador UX/UI</p>
-                            <p>Optimización de flujos financieros complejos para mejorar la experiencia del usuario y la conversión bancaria.</p>
+                            <p class="text-primary fw-bold">Diseñador UX/UI Web & Mobile</p>
+                            <p>Especializado en el sector de <strong>remesas</strong>, diseñando interfaces web y móviles centradas en la simplicidad y seguridad transaccional para usuarios en múltiples regiones.</p>
                         </div>
                         <div class="tab-pane fade project-card" id="jelp">
                             <h3 class="fw-bold">Jelp</h3>
-                            <p class="text-primary fw-bold">Desarrollador Fullstack & UX</p>
-                            <p>Desarrollo web con PHP y MySQL, integrando interfaces intuitivas con arquitecturas escalables.</p>
+                            <p class="text-primary fw-bold">Desarrollador Fullstack & UX (Web & Mobile)</p>
+                            <p>Desarrollo integral de soluciones de software para <strong>desktop y dispositivos móviles</strong>. Implementación de sistemas robustos utilizando <strong>PHP, JS, MySQL, HTML y CSS</strong>, asegurando una experiencia de usuario fluida en todas las plataformas.</p>
                         </div>
                         <div class="tab-pane fade project-card" id="secam">
                             <h3 class="fw-bold">Sección Amarilla (ADN Digital)</h3>
-                            <p class="text-primary fw-bold">Fullstack Designer & Dev</p>
-                            <p>Base profesional enfocada en Angular y maquetación avanzada para proyectos nacionales de alto tráfico.</p>
+                            <p class="text-primary fw-bold">Diseñador Web & Fullstack Developer</p>
+                            <p>Diseño y maquetación avanzada para sitios web de alto tráfico. Especialista en el uso de <strong>Adobe XD</strong> para el diseño de prototipos y la realización de <strong>pruebas de usabilidad</strong> antes del desarrollo Front-end.</p>
                         </div>
                         <div class="tab-pane fade project-card" id="vector">
                             <h3 class="fw-bold">Vector Casa de Bolsa</h3>
                             <p class="text-primary fw-bold">Desarrollador React Native</p>
-                            <p>Desarrollo móvil híbrido con TypeScript, consumiendo servicios de backend en tiempo real.</p>
+                            <p>Construcción de interfaces móviles híbridas con TypeScript, integrando flujos de datos financieros mediante APIs del equipo de backend.</p>
                         </div>
                     </div>
                 </div>
