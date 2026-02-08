@@ -1,197 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JUAN CARLOS | UX Engineer & Fullstack</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-
+    
     <style>
         :root {
-            --primary-blue: #0052cc;
-            --dark-navy: #091e42;
-            --light-bg: #f4f5f7;
-            --accent-blue: #deebff;
+            --bg-dark: #0a0a0c;
+            --card-dark: #16161a;
+            --electric-blue: #00d2ff;
+            --text-main: #ffffff;
+            --text-dim: #94a3b8;
         }
 
         body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
             font-family: 'Quicksand', sans-serif;
-            color: var(--dark-navy);
-            background-color: #fff;
+            overflow-x: hidden;
         }
 
-        /* Navbar elegante */
-        .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(8px);
-            border-bottom: 1px solid #ebecf0;
-            padding: 1rem 0;
-        }
+        h1, h2, .nav-link { font-family: 'Space Grotesk', sans-serif; }
 
-        /* Hero Section - Imagen libre y texto potente */
-        .hero-section {
-            padding: 120px 0 0 0;
-            background: radial-gradient(circle at top right, var(--accent-blue) 0%, #ffffff 50%);
-        }
+        /* Navbar Transparente */
+        .navbar { background: rgba(10, 10, 12, 0.8); backdrop-filter: blur(15px); border-bottom: 1px solid #222; }
 
-        .p2 { font-size: 5rem; font-weight: 800; color: var(--dark-navy); line-height: 0.9; }
-        .p3 { font-size: 1.8rem; color: var(--primary-blue); font-weight: 600; margin-top: 15px; }
+        /* Hero: Impacto Total */
+        .hero { padding: 150px 0 0; background: radial-gradient(circle at 80% 20%, #1e293b 0%, #0a0a0c 50%); }
+        .display-1 { font-weight: 700; letter-spacing: -2px; line-height: 0.85; }
+        .text-gradient { background: linear-gradient(to right, #fff, var(--electric-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
-        .img-hero {
+        /* La imagen LIBRE con efecto de profundidad */
+        .hero-img {
             max-width: 100%;
             height: auto;
-            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.05));
+            filter: grayscale(20%) contrast(110%);
+            transition: 0.5s;
         }
+        .hero-img:hover { filter: grayscale(0%); transform: scale(1.02); }
 
-        /* Sección de Experiencia y Proyectos */
-        .work-section { padding: 100px 0; background-color: var(--light-bg); }
-
-        .nav-experience .nav-link {
-            color: #7a869a;
-            font-weight: 700;
-            font-size: 1.1rem;
-            padding: 1.2rem;
-            border-radius: 12px;
-            margin-bottom: 10px;
-            border: none;
-            transition: all 0.3s;
+        /* Tabs Laterales Estilo Neumórfico Dark */
+        .work-box { padding: 80px 0; }
+        .nav-pills .nav-link {
+            color: var(--text-dim);
+            background: transparent;
+            border: 1px solid #222;
+            margin-bottom: 12px;
+            padding: 20px;
+            border-radius: 15px;
+            transition: 0.4s;
             text-align: left;
         }
-
-        .nav-experience .nav-link.active {
-            background-color: white !important;
-            color: var(--primary-blue) !important;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transform: translateX(10px);
+        .nav-pills .nav-link.active {
+            background: var(--card-dark) !important;
+            border-color: var(--electric-blue);
+            color: var(--electric-blue) !important;
+            box-shadow: 0 0 20px rgba(0, 210, 255, 0.1);
         }
 
-        .content-card {
-            background: white;
+        /* Contenedor de Proyectos */
+        .project-card {
+            background: var(--card-dark);
+            border-radius: 30px;
             padding: 50px;
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            border: 1px solid #222;
         }
 
-        .date-badge {
-            background: var(--accent-blue);
-            color: var(--primary-blue);
+        .badge-tech {
+            background: rgba(0, 210, 255, 0.1);
+            color: var(--electric-blue);
+            border: 1px solid var(--electric-blue);
             padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 15px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+            margin-right: 8px;
         }
 
-        .project-img-main { border-radius: 16px; width: 100%; margin: 25px 0; border: 1px solid #ebecf0; }
-        .project-grid img { border-radius: 12px; transition: 0.3s; width: 100%; }
-        .project-grid img:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+        .img-stack { border-radius: 20px; border: 1px solid #333; transition: 0.3s; }
+        .img-stack:hover { border-color: var(--electric-blue); }
 
-        .btn-cv {
-            background-color: var(--primary-blue);
-            border: none;
-            padding: 12px 30px;
-            font-weight: 700;
-            border-radius: 12px;
-            transition: 0.3s;
-        }
-        .btn-cv:hover { transform: scale(1.05); background-color: var(--dark-navy); }
+        footer { border-top: 1px solid #222; padding: 40px 0; color: var(--text-dim); }
     </style>
-
-    <title>Juan Carlos | Portfolio 2026</title>
 </head>
-
 <body>
 
     <nav class="navbar fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="#"><img src="assets/img/jc-logo.png" width="55"></a>
-            <div class="d-flex gap-4 d-none d-md-flex">
-                <a href="#work" class="text-decoration-none text-dark fw-bold">Experience</a>
-                <a href="TU_CV_LINK" class="btn btn-primary btn-cv">Download CV</a>
-            </div>
+        <div class="container d-flex justify-content-between">
+            <a class="navbar-brand text-white fw-bold" href="#">TEMPIS<span class="text-info">DEV</span></a>
+            <a href="TU_LINK_CV" class="btn btn-outline-info rounded-pill px-4">Get Resume</a>
         </div>
     </nav>
 
-    <section class="hero-section">
+    <header class="hero">
         <div class="container">
             <div class="row align-items-end">
-                <div class="col-md-7 pb-5 animate__animated animate__fadeInLeft">
-                    <p class="fs-3 text-muted mb-0">I build digital products</p>
-                    <h1 class="p2">JUAN<br>CARLOS</h1>
-                    <p class="p3 text-uppercase tracking-wider">UX/UI Designer & Fullstack Developer</p>
+                <div class="col-md-7 mb-5">
+                    <p class="text-info fw-bold mb-2">S. NICOLÁS DE LOS GARZA, NL</p>
+                    <h1 class="display-1">JUAN<br><span class="text-gradient">CARLOS</span></h1>
+                    <p class="fs-4 mt-3 text-dim">Ingeniero en Sistemas | <span class="text-white">UX/UI & Fullstack Developer</span></p>
                 </div>
-                <div class="col-md-5 animate__animated animate__fadeInUp">
-                    <img src="foto-principal.webp" alt="Juan Carlos" class="img-hero">
+                <div class="col-md-5 text-center">
+                    <img src="foto-principal.webp" alt="Juan Carlos" class="hero-img">
                 </div>
             </div>
         </div>
-    </section>
+    </header>
 
-    <section class="work-section" id="work">
+    <section class="work-box">
         <div class="container">
-            <h2 class="fw-bold mb-5 fs-1">Professional Path</h2>
+            <h2 class="mb-5 fw-bold">EXPERIENCIA DESTACADA</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="nav flex-column nav-experience" id="v-pills-tab" role="tablist">
-                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#solar">☀️ Sistema Paneles Solares</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dinex">🏦 DINEX (2024 - Hoy)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022 - 2024)</button>
+                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#solar">⚡ Sistema Paneles Solares</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dinex">💎 DINEX (Actualidad)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022-2024)</button>
                         <button class="nav-link" data-bs-toggle="pill" data-bs-target="#vtro">🚗 Vitrocar</button>
                         <button class="nav-link" data-bs-toggle="pill" data-bs-target="#esteci">🅿️ Esteciapp</button>
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="tab-content content-card">
+                    <div class="tab-content">
                         
-                        <div class="tab-pane fade show active" id="solar">
-                            <span class="date-badge">PROYECTO DESTACADO 2026</span>
-                            <h2 class="fw-bold">Gestión Fotovoltaica Fullstack</h2>
-                            <p class="lead">Sistema integral para el cálculo de eficiencia y layout de paneles solares.</p>
-                            <p>Desarrollé la lógica de negocio para dimensionar instalaciones de 8+ paneles. Una herramienta técnica que combina un backend robusto con una UI limpia para el usuario final.</p>
-                            <div class="bg-light p-4 rounded text-center my-4">
-                                <p class="text-muted">Espacio para capturas del dashboard técnico de paneles solares</p>
+                        <div class="tab-pane fade show active project-card" id="solar">
+                            <div class="mb-3">
+                                <span class="badge-tech">Fullstack</span>
+                                <span class="badge-tech">MySQL</span>
+                                <span class="badge-tech">Engineering</span>
+                            </div>
+                            <h2 class="fw-bold">Gestión de Sistemas Fotovoltaicos</h2>
+                            <p class="text-dim">Desarrollé una herramienta técnica para el diseño y cálculo de instalaciones de paneles solares residenciales (8+ unidades).</p>
+                            <p>Este sistema no solo es una interfaz; es un motor de cálculo que optimiza el layout fotovoltaico basándose en datos técnicos reales.</p>
+                            <div class="p-5 bg-dark rounded-4 text-center border border-secondary">
+                                <i class="fas fa-solar-panel fa-4x text-info mb-3"></i>
+                                <p class="text-dim">Subiendo capturas del Dashboard 2026...</p>
                             </div>
                         </div>
 
-                        <div class="tab-pane fade" id="dinex">
-                            <span class="date-badge">ENE 2024 - ACTUALIDAD</span>
-                            <h2 class="fw-bold">DINEX</h2>
-                            <h5 class="text-primary mb-3">Diseñador UX/UI Senior</h5>
-                            <p>Lidero la arquitectura de información y el diseño visual de plataformas financieras. Mi enfoque es la seguridad, la claridad y el minimalismo en procesos transaccionales complejos.</p>
+                        <div class="tab-pane fade project-card" id="dinex">
+                            <span class="text-info fw-bold">ENE 2024 - PRESENTE</span>
+                            <h2 class="fw-bold mt-2 text-white">DINEX</h2>
+                            <h5 class="text-dim">UX/UI Designer</h5>
+                            <p class="mt-4">Lidero el diseño de experiencias para servicios financieros de alta demanda. Mi rol es asegurar que la complejidad del backend se convierta en una interfaz simple, segura y minimalista para el usuario final.</p>
                         </div>
 
-                        <div class="tab-pane fade" id="jelp">
-                            <span class="date-badge">NOV 2022 - ENE 2024</span>
-                            <h2 class="fw-bold">JELP</h2>
-                            <h5 class="text-primary mb-3">Fullstack & UX Designer</h5>
-                            <p>Responsable del desarrollo de aplicaciones web usando PHP, MySQL y JavaScript, garantizando que el diseño visual se tradujera perfectamente en funcionalidad técnica.</p>
+                        <div class="tab-pane fade project-card" id="jelp">
+                            <span class="text-info fw-bold">2022 - 2024</span>
+                            <h2 class="fw-bold mt-2 text-white">JELP</h2>
+                            <h5 class="text-dim">Fullstack & UX</h5>
+                            <p class="mt-4">Responsable de unir ambos mundos: Desarrollo en PHP/MySQL y diseño de interfaces. Creación de soluciones robustas enfocadas en la usabilidad.</p>
                         </div>
 
-                        <div class="tab-pane fade" id="vtro">
-                            <span class="date-badge">PROYECTO UI</span>
-                            <h2 class="fw-bold">Vitrocar</h2>
-                            <img src="assets/img/Vitrocar/fondo.png" class="project-img-main shadow">
-                            <p>Rediseño de la landing page principal. Entregable de alta fidelidad para el equipo de desarrollo, enfocado en conversión y limpieza visual.</p>
-                            <div class="row project-grid">
-                                <div class="col-6"><img src="assets/img/Vitrocar/Web_1920_226128147_10.webp"></div>
-                                <div class="col-6"><img src="assets/img/Vitrocar/Web_1920_226128147_11.webp"></div>
-                            </div>
+                        <div class="tab-pane fade project-card" id="vtro">
+                            <h2 class="fw-bold text-white">Vitrocar</h2>
+                            <img src="assets/img/Vitrocar/fondo.png" class="img-stack my-4 img-fluid">
+                            <p class="text-dim">Estrategia visual y rediseño UI de la página principal para una de las cadenas más importantes de cristales automotrices.</p>
                         </div>
 
-                        <div class="tab-pane fade" id="esteci">
-                            <span class="date-badge">DISEÑO Y DEV</span>
-                            <h2 class="fw-bold">Esteciapp</h2>
-                            <img src="assets/img/Esteciapp/fondo-esteci.png" class="project-img-main">
-                            <p>Control de accesos y gastos para estacionamientos. Una solución Fullstack que resolvió una necesidad real de gestión local.</p>
-                            <div class="row project-grid g-3">
-                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_1.webp"></div>
-                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_3.webp"></div>
-                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_5.webp"></div>
+                        <div class="tab-pane fade project-card" id="esteci">
+                            <h2 class="fw-bold text-white">Esteciapp</h2>
+                            <p class="text-dim">Solución móvil integral para gestión de estacionamientos.</p>
+                            <div class="row mt-4">
+                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_1.webp" class="img-fluid img-stack"></div>
+                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_3.webp" class="img-fluid img-stack"></div>
+                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_5.webp" class="img-fluid img-stack"></div>
                             </div>
                         </div>
 
@@ -201,12 +177,17 @@
         </div>
     </section>
 
-    <footer class="py-5 text-center border-top">
-        <img src="assets/img/jc-logo.png" width="40" class="mb-3">
-        <p class="text-muted small">© 2026 Juan Carlos | San Nicolás de los Garza, Nuevo León</p>
+    <footer class="text-center">
+        <div class="container">
+            <div class="d-flex justify-content-center gap-4 mb-4 fs-4">
+                <a href="#" class="text-white"><i class="fab fa-github"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-white"><i class="fab fa-behance"></i></a>
+            </div>
+            <p class="small">JUAN CARLOS | 2026 | BUILT WITH CODE & DESIGN</p>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-
 </html>
