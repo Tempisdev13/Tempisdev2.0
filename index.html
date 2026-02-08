@@ -19,9 +19,10 @@
             font-family: 'Quicksand', sans-serif;
             color: var(--dark-navy);
             background-color: #fff;
+            overflow-x: hidden; /* Evita el scroll horizontal */
         }
 
-        h1, h2, h3, .nav-link, .typed-text { font-family: 'Space Grotesk', sans-serif; }
+        h1, h2, h3, .nav-link { font-family: 'Space Grotesk', sans-serif; }
 
         .navbar {
             background: rgba(255, 255, 255, 0.9);
@@ -29,30 +30,31 @@
             border-bottom: 1px solid #e2e8f0;
         }
 
+        /* Hero Ajustado para que el texto no rompa el diseño */
         .hero {
             padding: 160px 0 100px;
             background: linear-gradient(180deg, var(--light-bg) 0%, #ffffff 100%);
         }
 
-        .display-1 { font-weight: 700; color: var(--dark-navy); line-height: 1; }
+        .display-1 { 
+            font-weight: 700; 
+            color: var(--dark-navy); 
+            line-height: 1.1;
+            min-height: 2.2em; /* Reserva el espacio para el texto animado */
+        }
+        
+        #typed { font-size: 0.8em; } /* Reduce ligeramente el tamaño del texto animado si es muy largo */
+
         .hero-img { max-width: 100%; height: auto; display: block; }
 
         .about-section { padding: 80px 0; }
         .description-text { font-size: 1.15rem; line-height: 1.8; color: #4a5568; }
 
-        /* Tarjetas de Habilidades */
-        .skill-card {
-            background: white;
-            border: 1px solid #e2e8f0;
-            padding: 25px;
-            border-radius: 15px;
-            transition: 0.3s;
-            height: 100%;
-        }
-        .skill-card:hover { border-color: var(--primary-blue); transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
-        .skill-card i { color: var(--primary-blue); font-size: 2rem; margin-bottom: 15px; }
+        /* Stats Section - LO NUEVO */
+        .stats-section { background: var(--dark-navy); color: white; padding: 60px 0; }
+        .stat-box h2 { color: var(--primary-blue); font-weight: 700; margin-bottom: 0; }
 
-        /* Tabs de Experiencia */
+        /* Experiencia */
         .work-area { padding: 100px 0; background-color: var(--light-bg); }
         .nav-experience .nav-link {
             color: #718096;
@@ -62,13 +64,11 @@
             border-radius: 12px;
             background: white;
             border: 1px solid #e2e8f0;
-            transition: 0.3s;
             text-align: left;
         }
         .nav-experience .nav-link.active {
             background-color: var(--primary-blue) !important;
             color: white !important;
-            box-shadow: 0 10px 20px rgba(0,97,255,0.15);
         }
 
         .tab-content-card {
@@ -84,11 +84,6 @@
     <nav class="navbar fixed-top px-4">
         <div class="container d-flex justify-content-between">
             <a class="navbar-brand fw-bold" href="#">TEMPISDEV</a>
-            <div class="d-none d-md-flex gap-4">
-                <a href="#about" class="text-dark text-decoration-none fw-600">Sobre mí</a>
-                <a href="#skills" class="text-dark text-decoration-none fw-600">Habilidades</a>
-                <a href="#work" class="text-dark text-decoration-none fw-600">Experiencia</a>
-            </div>
             <button class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">Descargar CV</button>
         </div>
     </nav>
@@ -98,7 +93,7 @@
             <div class="row align-items-center">
                 <div class="col-md-7 mb-5">
                     <p class="fs-4 text-muted mb-2">Hola, soy Carlos</p>
-                    <h1 class="display-1">Soy <br><span id="typed" class="text-primary"></span></h1>
+                    <h1 class="display-1">Soy <br><span id="typed" class="text-primary text-wrap"></span></h1>
                 </div>
                 <div class="col-md-5">
                     <img src="foto-principal.webp" alt="Juan Carlos" class="hero-img">
@@ -118,37 +113,27 @@
                         Graduado de la carrera de <strong>Ingeniería en Sistemas Computacionales</strong>, apasionado por el diseño <strong>UX y UI</strong>. Me interesa profundizar y entender los problemas, sintiendo curiosidad por saber el porqué y cómo resolverlos.
                     </p>
                     <p class="description-text">
-                        Me considero una persona capaz y proactiva, con gran interés por aprender cada día más. Me encanta interactuar con las personas y trabajar en equipo. Mi perfil combina el rigor técnico de la ingeniería con la visión comercial estratégica de un Gerente de Ventas.
+                        Me considero una persona capaz y proactiva, con gran interés por aprender cada día más. Me encanta interactuar con las personas y trabajar en equipo. Mi perfil híbrido combina el rigor técnico con la visión estratégica de un <strong>Gerente de Ventas</strong>.
                     </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="pb-5" id="skills">
+    <section class="stats-section text-center">
         <div class="container">
-            <h2 class="fw-bold mb-5">Mi Stack & Habilidades</h2>
             <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="skill-card">
-                        <i class="fas fa-magic"></i>
-                        <h4 class="fw-bold">Diseño Creativo</h4>
-                        <p class="text-muted small">Experto en Adobe XD, Photoshop, Illustrator, After Effects, Corel Draw y Figma para crear experiencias visuales de alto impacto.</p>
-                    </div>
+                <div class="col-md-4 stat-box">
+                    <h2>+5 Años</h2>
+                    <p class="mb-0">Experiencia Digital</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="skill-card">
-                        <i class="fas fa-terminal"></i>
-                        <h4 class="fw-bold">Desarrollo Fullstack</h4>
-                        <p class="text-muted small">Dominio de Angular, JavaScript, TypeScript, PHP, MySQL y maquetación avanzada con HTML5/CSS3.</p>
-                    </div>
+                <div class="col-md-4 stat-box">
+                    <h2>8 Paneles</h2>
+                    <p class="mb-0">Diseño de Layout Solar</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="skill-card">
-                        <i class="fas fa-chart-line"></i>
-                        <h4 class="fw-bold">Ventas & Estrategia</h4>
-                        <p class="text-muted small">Gerencia de ventas, facilidad de palabra, persuasión y negociación técnica para el cierre de proyectos fotovoltaicos.</p>
-                    </div>
+                <div class="col-md-4 stat-box">
+                    <h2>Fullstack</h2>
+                    <p class="mb-0">Capacidad de Desarrollo</p>
                 </div>
             </div>
         </div>
@@ -160,38 +145,42 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="nav flex-column nav-experience" id="v-pills-tab" role="tablist">
-                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#solar">☀️ Gerente de Ventas & Sistemas Solares</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dinex">🏦 DINEX (2024 - Hoy)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#amarilla">📒 Sección Amarilla (Fullstack)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022-2024)</button>
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#solar">☀️ Gerente de Ventas & Energía Solar</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dinex">🏦 DINEX (2024 - Actualidad)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022 - 2024)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#amarilla">📒 Sección Amarilla (2020 - 2022)</button>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="tab-content tab-content-card">
+                        
                         <div class="tab-pane fade show active" id="solar">
-                            <h3 class="fw-bold mb-3">Gerente de Ventas & Desarrollador de Sistemas Solares</h3>
-                            <p>Lidero la estrategia comercial y el desarrollo técnico de soluciones de energía renovable.</p>
+                            <h3 class="fw-bold mb-3">Gerente de Ventas & Sistemas Solares</h3>
+                            <p>Liderazgo comercial y técnico en soluciones fotovoltaicas.</p>
                             <ul class="mt-3">
-                                <li><strong>Facilidad de palabra:</strong> Negociación directa con clientes para el cierre de proyectos de 8+ paneles.</li>
-                                <li><strong>Ingeniería:</strong> Desarrollo del software de cálculo estructural y layout técnico para optimizar instalaciones residenciales.</li>
-                                <li><strong>Liderazgo:</strong> Gestión de equipo de ventas y cumplimiento de metas comerciales.</li>
+                                <li><strong>Ventas:</strong> Persuasión y cierre de negociaciones técnicas para instalaciones residenciales.</li>
+                                <li><strong>Ingeniería:</strong> Desarrollo de software para el cálculo de eficiencia energética y layouts de 8 paneles.</li>
                             </ul>
                         </div>
+
                         <div class="tab-pane fade" id="dinex">
                             <h3 class="fw-bold mb-3">DINEX</h3>
                             <p class="text-primary fw-bold">Diseñador UX/UI</p>
-                            <p>Creación de interfaces para el sector financiero, priorizando la seguridad y simplicidad del usuario.</p>
+                            <p>Ene 2024 - Hoy. Diseño de interfaces bancarias centradas en la simplicidad y seguridad.</p>
                         </div>
-                        <div class="tab-pane fade" id="amarilla">
-                            <h3 class="fw-bold mb-3">Sección Amarilla (ADN Digital)</h3>
-                            <p class="text-primary fw-bold">Diseñador & Desarrollador Fullstack</p>
-                            <p>Ejecución integral de proyectos web, desde el prototipado visual hasta el despliegue técnico.</p>
-                        </div>
+
                         <div class="tab-pane fade" id="jelp">
                             <h3 class="fw-bold mb-3">JELP</h3>
                             <p class="text-primary fw-bold">Desarrollador Fullstack & UX</p>
-                            <p>Construcción de aplicaciones escalables con enfoque en la experiencia de usuario final.</p>
+                            <p>Nov 2022 - Ene 2024. Desarrollo de aplicaciones escalables con PHP, MySQL y JavaScript.</p>
                         </div>
+
+                        <div class="tab-pane fade" id="amarilla">
+                            <h3 class="fw-bold mb-3">Sección Amarilla (ADN Digital)</h3>
+                            <p class="text-primary fw-bold">Diseñador & Desarrollador Fullstack</p>
+                            <p>2020 - 2022. Mi base profesional donde diseñé mokups (UX/UI) y desarrollé proyectos web con Angular, HTML y CSS.</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -206,9 +195,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var typed = new Typed('#typed', {
-            strings: ['Diseñador UX/UI', 'Ingeniero de Sistemas', 'Desarrollador Fullstack', 'Gerente de Ventas'],
-            typeSpeed: 60,
-            backSpeed: 40,
+            strings: ['Diseñador UX/UI', 'Ingeniero de Sistemas', 'Fullstack Developer', 'Gerente de Ventas'],
+            typeSpeed: 50,
+            backSpeed: 30,
             loop: true
         });
     </script>
