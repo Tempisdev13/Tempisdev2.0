@@ -3,78 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUAN CARLOS | UX Engineer & Fullstack</title>
+    <title>Juan Carlos | UX Engineer & Fullstack</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     
     <style>
         :root {
-            --bg-dark: #0a0a0c;
-            --card-dark: #16161a;
-            --electric-blue: #00d2ff;
-            --text-main: #ffffff;
-            --text-dim: #94a3b8;
+            --primary-blue: #0061ff;
+            --dark-navy: #051937;
+            --light-bg: #f8fbff;
+            --text-gray: #4a5568;
         }
 
         body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
             font-family: 'Quicksand', sans-serif;
+            color: var(--dark-navy);
+            background-color: #fff;
         }
 
         h1, h2, h3, .nav-link { font-family: 'Space Grotesk', sans-serif; }
 
-        /* Hero Impact */
-        .hero { padding: 150px 0 80px; background: radial-gradient(circle at 80% 20%, #1e293b 0%, #0a0a0c 50%); }
-        .text-gradient { background: linear-gradient(to right, #fff, var(--electric-blue)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .hero-img { max-width: 100%; height: auto; transition: 0.5s; }
-
-        /* Skill Section - LO NUEVO */
-        .skills-section { padding: 80px 0; background: #0e0e11; }
-        .skill-group { background: var(--card-dark); border-radius: 20px; padding: 30px; height: 100%; border: 1px solid #222; transition: 0.3s; }
-        .skill-group:hover { border-color: var(--electric-blue); transform: translateY(-5px); }
-        .skill-group i { color: var(--electric-blue); margin-bottom: 20px; }
-        
-        .skill-tag { 
-            display: inline-block; 
-            background: rgba(255,255,255,0.05); 
-            padding: 5px 12px; 
-            border-radius: 8px; 
-            font-size: 0.85rem; 
-            margin: 4px; 
-            color: var(--text-dim);
-            border: 1px solid #333;
+        /* Navbar */
+        .navbar {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e2e8f0;
         }
+
+        /* Hero: Blanco y Azul */
+        .hero {
+            padding: 140px 0 0;
+            background: linear-gradient(180deg, var(--light-bg) 0%, #ffffff 100%);
+        }
+
+        .display-1 { font-weight: 700; color: var(--dark-navy); line-height: 1; }
+        .hero-img { max-width: 100%; height: auto; display: block; }
+
+        /* Skills Section */
+        .skills-bar { background: var(--dark-navy); color: white; padding: 60px 0; }
+        .skill-item { border-left: 2px solid var(--primary-blue); padding-left: 20px; margin-bottom: 20px; }
 
         /* Work Section */
-        .work-box { padding: 100px 0; }
-        .nav-pills .nav-link {
-            color: var(--text-dim);
-            background: transparent;
-            border: 1px solid #222;
-            margin-bottom: 12px;
+        .work-area { padding: 100px 0; background-color: var(--light-bg); }
+        
+        .nav-experience .nav-link {
+            color: var(--text-gray);
+            font-weight: 600;
             padding: 20px;
-            border-radius: 15px;
-            transition: 0.4s;
-            text-align: left;
-        }
-        .nav-pills .nav-link.active {
-            background: var(--card-dark) !important;
-            border-color: var(--electric-blue);
-            color: var(--electric-blue) !important;
+            margin-bottom: 10px;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            background: white;
+            transition: 0.3s;
         }
 
-        .project-card { background: var(--card-dark); border-radius: 30px; padding: 50px; border: 1px solid #222; }
-        .img-stack { border-radius: 15px; border: 1px solid #333; margin-top: 20px; }
+        .nav-experience .nav-link.active {
+            background-color: var(--primary-blue) !important;
+            color: white !important;
+            border-color: var(--primary-blue);
+            box-shadow: 0 10px 20px rgba(0,97,255,0.2);
+        }
+
+        .tab-content-card {
+            background: white;
+            padding: 50px;
+            border-radius: 24px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .badge-date {
+            font-weight: 700;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .img-project { border-radius: 15px; border: 1px solid #edf2f7; width: 100%; margin-top: 20px; }
     </style>
 </head>
 <body>
 
-    <nav class="navbar fixed-top px-4">
+    <nav class="navbar fixed-top">
         <div class="container d-flex justify-content-between">
-            <a class="navbar-brand text-white fw-bold" href="#">TEMPIS<span class="text-info">DEV</span></a>
-            <a href="TU_LINK_CV" class="btn btn-outline-info rounded-pill px-4">Download CV</a>
+            <a class="navbar-brand fw-bold" href="#" style="color: var(--dark-navy);">TEMPISDEV</a>
+            <button class="btn btn-primary rounded-pill px-4 fw-bold">Download CV</button>
         </div>
     </nav>
 
@@ -82,111 +98,75 @@
         <div class="container">
             <div class="row align-items-end">
                 <div class="col-md-7 mb-5">
-                    <h1 class="display-1 fw-bold">JUAN<br><span class="text-gradient">CARLOS</span></h1>
-                    <p class="fs-4 mt-3 text-dim">Ingeniero en Sistemas | <span class="text-white">UX/UI & Fullstack Developer</span></p>
+                    <h1 class="display-1">JUAN<br><span style="color: var(--primary-blue);">CARLOS</span></h1>
+                    <p class="fs-4 mt-3">Ingeniero en Sistemas | <span class="fw-bold">UX/UI & Fullstack Developer</span></p>
                 </div>
-                <div class="col-md-5 text-center">
+                <div class="col-md-5">
                     <img src="foto-principal.webp" alt="Juan Carlos" class="hero-img">
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="skills-section">
+    <section class="skills-bar">
         <div class="container">
-            <h2 class="fw-bold mb-5">CORE CAPABILITIES</h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="skill-group">
-                        <i class="fas fa-bezier-curve fa-2x"></i>
-                        <h4 class="fw-bold">Creative Suite</h4>
-                        <p class="text-dim small">Dominio experto en diseño visual y movimiento.</p>
-                        <div class="d-flex flex-wrap">
-                            <span class="skill-tag">Adobe XD</span>
-                            <span class="skill-tag">Photoshop</span>
-                            <span class="skill-tag">Illustrator</span>
-                            <span class="skill-tag">After Effects</span>
-                            <span class="skill-tag">Corel Draw</span>
-                            <span class="skill-tag">Figma</span>
-                            <span class="skill-tag">Sketch</span>
-                        </div>
-                    </div>
+            <div class="row">
+                <div class="col-md-4 skill-item">
+                    <h5>Creative Suite</h5>
+                    <p class="small text-info mb-0">Ps, Ai, Xd, Ae, Corel Draw, Figma</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="skill-group">
-                        <i class="fas fa-code fa-2x"></i>
-                        <h4 class="fw-bold">Engineering</h4>
-                        <p class="text-dim small">Desarrollo escalable y lógica de negocio.</p>
-                        <div class="d-flex flex-wrap">
-                            <span class="skill-tag">Angular</span>
-                            <span class="skill-tag">JavaScript (ES6+)</span>
-                            <span class="skill-tag">TypeScript</span>
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">MySQL</span>
-                            <span class="skill-tag">HTML5/CSS3</span>
-                            <span class="skill-tag">Sass</span>
-                        </div>
-                    </div>
+                <div class="col-md-4 skill-item">
+                    <h5>Engineering</h5>
+                    <p class="small text-info mb-0">Angular, PHP, MySQL, JS, TS</p>
                 </div>
-                <div class="col-md-4">
-                    <div class="skill-group">
-                        <i class="fas fa-mobile-alt fa-2x"></i>
-                        <h4 class="fw-bold">Mobile & UX</h4>
-                        <p class="text-dim small">Experiencias nativas e híbridas.</p>
-                        <div class="d-flex flex-wrap">
-                            <span class="skill-tag">Flutter</span>
-                            <span class="skill-tag">React Native</span>
-                            <span class="skill-tag">User Research</span>
-                            <span class="skill-tag">Wireframing</span>
-                            <span class="skill-tag">Design Thinking</span>
-                            <span class="skill-tag">Prototyping</span>
-                        </div>
-                    </div>
+                <div class="col-md-4 skill-item">
+                    <h5>Mobile</h5>
+                    <p class="small text-info mb-0">Flutter, React Native, UX Research</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="work-box" id="work">
+    <section class="work-area">
         <div class="container">
-            <h2 class="mb-5 fw-bold">PROFESSIONAL EXPERIENCE</h2>
+            <h2 class="fw-bold mb-5">Experiencia Profesional</h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+                    <div class="nav flex-column nav-experience" id="v-pills-tab" role="tablist">
                         <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#solar">⚡ Sistema Paneles Solares</button>
                         <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dinex">🏦 DINEX (2024 - Hoy)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#amarilla">📒 Sección Amarilla (ADN)</button>
                         <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022-2024)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#esteci">🅿️ Esteciapp</button>
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active project-card" id="solar">
-                            <h2 class="fw-bold">Ingeniería Fotovoltaica</h2>
-                            <p class="text-dim">Desarrollo de un software de cálculo estructural y energético para instalaciones de paneles solares residenciales.</p>
-                            <p>Este proyecto demuestra mi capacidad para manejar lógica compleja de **Ingeniería en Sistemas** aplicada a problemas reales de energía renovable.</p>
+                    <div class="tab-content tab-content-card">
+                        
+                        <div class="tab-pane fade show active" id="solar">
+                            <span class="badge-date">Ingeniería & Desarrollo</span>
+                            <h2 class="fw-bold">Gestión Fotovoltaica</h2>
+                            <p>Desarrollo de una plataforma Fullstack para el cálculo y diseño de instalaciones de paneles solares. Un sistema que une lógica de ingeniería compleja con una experiencia de usuario simplificada.</p>
                         </div>
 
-                        <div class="tab-pane fade project-card" id="dinex">
-                            <h2 class="fw-bold text-white">DINEX</h2>
-                            <p class="text-info fw-bold">UX/UI Designer</p>
-                            <p class="mt-4">Lidero el diseño de experiencias financieras, simplificando flujos complejos para el usuario final en un entorno bancario digital.</p>
+                        <div class="tab-pane fade" id="dinex">
+                            <span class="badge-date">Ene 2024 - Actualidad</span>
+                            <h2 class="fw-bold">DINEX</h2>
+                            <h5 class="text-primary">UX/UI Designer</h5>
+                            <p>Diseño de interfaces financieras de alto impacto, enfocadas en la seguridad y la claridad visual para el usuario final.</p>
                         </div>
 
-                        <div class="tab-pane fade project-card" id="jelp">
-                            <h2 class="fw-bold text-white">JELP</h2>
-                            <p class="text-info fw-bold">Fullstack Developer & UX</p>
-                            <p class="mt-4">Desarrollo integral de aplicaciones web con PHP y MySQL, uniendo el diseño visual con la arquitectura técnica.</p>
+                        <div class="tab-pane fade" id="amarilla">
+                            <span class="badge-date">Nov 2021 - Oct 2022</span>
+                            <h2 class="fw-bold">Sección Amarilla (ADN Digital)</h2>
+                            <h5 class="text-primary">Diseñador & Desarrollador Fullstack</h5>
+                            <p>Encargado de diseñar y desarrollar soluciones integrales para clientes nacionales, cubriendo desde el prototipado UX hasta la implementación técnica completa.</p>
                         </div>
 
-                        <div class="tab-pane fade project-card" id="esteci">
-                            <h2 class="fw-bold text-white">Esteciapp</h2>
-                            <p class="text-dim">Gestión móvil de estacionamientos en El Mante.</p>
-                            <div class="row mt-4">
-                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_1.webp" class="img-fluid img-stack"></div>
-                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_3.webp" class="img-fluid img-stack"></div>
-                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_5.webp" class="img-fluid img-stack"></div>
-                            </div>
+                        <div class="tab-pane fade" id="jelp">
+                            <span class="badge-date">2022 - 2024</span>
+                            <h2 class="fw-bold">JELP</h2>
+                            <h5 class="text-primary">Fullstack & UX</h5>
+                            <p>Desarrollo web robusto con PHP y MySQL, integrando vistas dinámicas y diseño centrado en el usuario.</p>
                         </div>
 
                     </div>
@@ -195,8 +175,8 @@
         </div>
     </section>
 
-    <footer class="text-center">
-        <p class="small text-dim">© 2026 JUAN CARLOS | San Nicolás de los Garza, NL</p>
+    <footer class="py-5 text-center border-top">
+        <p class="text-muted small">JUAN CARLOS | © 2026 | San Nicolás de los Garza, NL</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
