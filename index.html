@@ -18,42 +18,31 @@
         body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); color: var(--dark); overflow-x: hidden; }
         h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
 
-        /* Navbar Minimalista */
         .navbar { background: rgba(255,255,255,0.8); backdrop-filter: blur(15px); border-bottom: 1px solid #f1f1f1; }
 
-        /* Hero */
-        .hero { padding: 160px 0 100px; background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%); }
+        .hero { padding: 160px 0 60px; background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%); }
         .display-1 { font-size: 5rem; line-height: 1; margin-bottom: 20px; }
         .hero-img { max-width: 100%; height: auto; }
 
-        /* Sobre Mí */
-        .about-section { padding: 80px 0; }
-        .description-text { font-size: 1.1rem; line-height: 1.8; color: #4a5568; }
-
-        /* Highlight Box Estratégica */
-        .business-highlight {
-            background: #f0f7ff;
-            border-left: 5px solid var(--primary);
-            padding: 30px;
-            border-radius: 0 20px 20px 0;
-            margin: 30px 0;
+        /* Bento Grid Ajustada: Más peso al Desarrollo */
+        .bento-grid { padding: 40px 0 80px; }
+        .bento-item { 
+            background: white; border: 1px solid #e2e8f0; border-radius: 24px; 
+            padding: 35px; height: 100%; transition: 0.3s;
         }
+        .bento-dev { background: var(--dark); color: white; border: none; }
+        .bento-sales { background: #f0f7ff; border: 1px solid #d0e5ff; }
 
-        /* Trayectoria */
+        /* Trayectoria Profesional */
         .work-section { padding: 100px 0; background: #fcfdfe; }
         .nav-pills .nav-link {
             color: #718096; background: white; border: 1px solid #e2e8f0;
-            padding: 20px; margin-bottom: 12px; border-radius: 15px; text-align: left; transition: 0.3s;
+            padding: 18px; margin-bottom: 12px; border-radius: 15px; text-align: left; transition: 0.3s;
         }
-        .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; box-shadow: 0 10px 20px rgba(0,97,255,0.1); }
+        .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; }
 
-        .project-card { background: white; border-radius: 30px; padding: 50px; border: 1px solid #e2e8f0; }
-        
-        /* Badges de Skills */
-        .skill-tag { 
-            background: #f1f5f9; color: var(--dark); padding: 6px 15px; 
-            border-radius: 8px; font-size: 0.85rem; font-weight: 600; display: inline-block; margin: 4px;
-        }
+        .project-card { background: white; border-radius: 30px; padding: 45px; border: 1px solid #e2e8f0; }
+        .badge-tech { background: #eef4ff; color: var(--primary); padding: 5px 12px; border-radius: 6px; font-size: 0.8rem; font-weight: 700; margin-right: 5px; }
     </style>
 </head>
 <body>
@@ -61,48 +50,67 @@
     <nav class="navbar fixed-top px-4">
         <div class="container d-flex justify-content-between">
             <a class="navbar-brand fw-bold" href="#">TEMPIS<span class="text-primary">DEV</span></a>
-            <button class="btn btn-primary rounded-pill px-4 fw-bold">Ver CV Completo</button>
+            <button class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">Descargar CV</button>
         </div>
     </nav>
 
     <header class="hero">
         <div class="container">
-            <div class="row align-items-center">
+            <div class="row align-items-center text-center text-md-start">
                 <div class="col-md-7">
-                    <h1 class="display-1">Hola, soy Carlos <br><span id="typed" class="text-primary"></span></h1>
+                    <h1 class="display-1">Soy <br><span id="typed" class="text-primary"></span></h1>
                     <p class="fs-5 text-muted mt-4 pe-md-5">
-                        Ingeniero de Sistemas enfocado en crear productos digitales que escalan. Especialista en unir el diseño de experiencia de usuario con arquitecturas de desarrollo robustas.
+                        Ingeniero de Sistemas apasionado por construir productos digitales donde la lógica técnica y el diseño UX convergen para resolver problemas reales.
                     </p>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 mt-5 mt-md-0">
                     <img src="foto-principal.webp" alt="Juan Carlos" class="hero-img">
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="fw-bold fs-1">Sobre <br><span class="text-primary">mi perfil</span></h2>
-                </div>
-                <div class="col-md-8">
-                    <p class="description-text">
-                        Graduado de <strong>Ingeniería en Sistemas Computacionales</strong>, me apasiona el diseño UX/UI porque creo que la tecnología solo es valiosa si el usuario puede interactuar con ella de forma natural. Mi formación técnica me permite construir lo que diseño, garantizando que cada píxel tenga una lógica funcional detrás.
-                    </p>
-
-                    <div class="business-highlight">
-                        <h5 class="fw-bold mb-2"><i class="fas fa-chart-line me-2"></i>Liderazgo Comercial & Resultados</h5>
-                        <p class="mb-0">
-                            Complemento mi perfil técnico con una sólida capacidad de liderazgo. Como Gerente de Ventas, he perfeccionado el arte de la persuasión y la negociación técnica, logrando el cierre de más de <strong>300 proyectos</strong> con una facturación superior a los <strong>$15M MXN</strong>. Esta visión de negocio me permite desarrollar software orientado a resultados y rentabilidad.
-                        </p>
+    <section class="container bento-grid">
+        <div class="row g-4">
+            <div class="col-md-8">
+                <div class="bento-item bento-dev">
+                    <div class="d-flex justify-content-between align-items-start mb-4">
+                        <i class="fas fa-code fa-3x text-primary"></i>
+                        <div class="text-end">
+                            <span class="badge-tech">Angular</span><span class="badge-tech">PHP</span><span class="badge-tech">Flutter</span>
+                        </div>
                     </div>
+                    <h2 class="display-5">Fullstack Engineering</h2>
+                    <p class="fs-5 opacity-75">Capacidad técnica para llevar una idea desde el prototipo UX/UI hasta una arquitectura de software escalable y funcional.</p>
+                </div>
+            </div>
 
-                    <div class="mt-4">
-                        <span class="skill-tag">Adobe Suite</span> <span class="skill-tag">Figma</span> <span class="skill-tag">Corel Draw</span>
-                        <span class="skill-tag">Angular</span> <span class="skill-tag">PHP</span> <span class="skill-tag">MySQL</span> 
-                        <span class="skill-tag">Flutter</span> <span class="skill-tag">React Native</span>
+            <div class="col-md-4">
+                <div class="bento-item bento-sales">
+                    <h3 class="fw-bold text-primary mb-2">$15M+ MXN</h3>
+                    <p class="fw-bold mb-1">Visión de Negocio</p>
+                    <p class="small text-muted mb-0">Experiencia en liderazgo comercial y persuasión técnica, cerrando más de 300 proyectos fotovoltaicos con enfoque en rentabilidad.</p>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="bento-item">
+                    <h4 class="fw-bold mb-3">Diseño UX/UI</h4>
+                    <p class="small text-muted">Dominio experto de Adobe Suite (Ps, Ai, Ae, Xd) y Figma para crear interfaces financieras y soluciones visuales de alto nivel.</p>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <div class="bento-item">
+                    <div class="row align-items-center">
+                        <div class="col-sm-8">
+                            <h4 class="fw-bold mb-2">Ingeniería Solar</h4>
+                            <p class="mb-0 text-muted">Desarrollo de software de cálculo y layout técnico para sistemas de 8 paneles, optimizando la precisión de ingeniería.</p>
+                        </div>
+                        <div class="col-sm-4 text-center mt-3 mt-sm-0">
+                            <h2 class="text-primary fw-bold mb-0">+300</h2>
+                            <p class="small text-muted fw-bold">PROYECTOS</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -111,37 +119,37 @@
 
     <section class="work-section" id="work">
         <div class="container">
-            <h2 class="fw-bold mb-5 fs-1 text-center">Experiencia <span class="text-primary">Profesional</span></h2>
+            <h2 class="fw-bold mb-5 fs-1">Experiencia <span class="text-primary">Profesional</span></h2>
             <div class="row">
                 <div class="col-md-4">
                     <div class="nav flex-column nav-pills" role="tablist">
-                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#solar">☀️ Sistema de Gestión Solar</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dinex">🏦 Dinex (2024-Hoy)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022-2024)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#amarilla">📒 Sección Amarilla (2020-2022)</button>
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#dinex">🏦 Dinex (Actualidad)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022 - 2024)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#secam">📒 Sección Amarilla (2020 - 2022)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#vector">📈 Vector Casa de Bolsa</button>
                     </div>
                 </div>
                 <div class="col-md-8">
                     <div class="tab-content">
-                        <div class="tab-pane fade show active project-card" id="solar">
-                            <h3 class="fw-bold">Ingeniería & Desarrollo Fotovoltaico</h3>
-                            <p class="text-primary fw-bold">Proyecto Core</p>
-                            <p>Desarrollé una plataforma integral para el cálculo de eficiencia y diseño de layouts técnicos para instalaciones de paneles solares. Este software automatiza procesos complejos de ingeniería, facilitando la toma de decisiones técnicas y comerciales.</p>
-                        </div>
-                        <div class="tab-pane fade project-card" id="dinex">
+                        <div class="tab-pane fade show active project-card" id="dinex">
                             <h3 class="fw-bold">Dinex</h3>
-                            <p class="text-primary fw-bold">UX/UI Designer</p>
-                            <p>Liderazgo en el diseño de interfaces para el sector fintech. Optimización de la experiencia de usuario en flujos bancarios críticos, asegurando simplicidad y cumplimiento de estándares de seguridad.</p>
+                            <p class="text-primary fw-bold">Diseñador UX/UI</p>
+                            <p>Optimización de interfaces financieras complejas, simplificando procesos bancarios para mejorar la conversión y la experiencia del usuario final.</p>
                         </div>
                         <div class="tab-pane fade project-card" id="jelp">
                             <h3 class="fw-bold">Jelp</h3>
-                            <p class="text-primary fw-bold">Fullstack Developer & UX</p>
-                            <p>Desarrollo de aplicaciones web escalables utilizando PHP y MySQL. Mi responsabilidad abarcó desde el diseño de la interfaz hasta la implementación de la lógica del servidor.</p>
+                            <p class="text-primary fw-bold">Desarrollador Fullstack & UX</p>
+                            <p>Desarrollo de aplicaciones web escalables utilizando PHP y MySQL, manteniendo la coherencia entre el diseño visual y la funcionalidad técnica.</p>
                         </div>
-                        <div class="tab-pane fade project-card" id="amarilla">
+                        <div class="tab-pane fade project-card" id="secam">
                             <h3 class="fw-bold">Sección Amarilla (ADN Digital)</h3>
-                            <p class="text-primary fw-bold">Diseñador & Desarrollador Fullstack</p>
-                            <p>Etapa formativa clave de 2020 a 2022 donde ejecuté proyectos de desarrollo web front-end con Angular y maquetación de prototipos UX/UI para diversos clientes.</p>
+                            <p class="text-primary fw-bold">Diseñador UX/UI y Desarrollador Front-end</p>
+                            <p>Encargado de diseñar páginas web y aplicaciones móviles para distintos clientes, cumpliendo roles de maquetador y desarrollador front-end.</p>
+                        </div>
+                        <div class="tab-pane fade project-card" id="vector">
+                            <h3 class="fw-bold">Vector Casa de Bolsa</h3>
+                            <p class="text-primary fw-bold">Diseñador y Desarrollador React Native</p>
+                            <p>Desarrollo de pantallas de aplicación móvil con React Native y Typescript, consumiendo APIs del equipo de backend.</p>
                         </div>
                     </div>
                 </div>
@@ -157,7 +165,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var typed = new Typed('#typed', {
-            strings: ['Designer', 'Developer', 'Engineer'],
+            strings: ['Developer', 'Designer', 'Engineer'],
             typeSpeed: 60,
             backSpeed: 40,
             loop: true
