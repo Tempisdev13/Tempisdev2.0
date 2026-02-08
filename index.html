@@ -24,6 +24,7 @@
         .display-1 { font-size: calc(2.2rem + 2vw); line-height: 1.1; margin-bottom: 20px; min-height: 2.2em; }
         .hero-img { max-width: 100%; height: auto; border-radius: 20px; display: block; margin: 0 auto; }
 
+        /* Bento Grid */
         .bento-grid { padding: 40px 0 80px; }
         .bento-item { 
             background: white; border: 1px solid #e2e8f0; border-radius: 24px; 
@@ -44,13 +45,17 @@
         .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; box-shadow: 0 10px 20px rgba(0,97,255,0.15); }
         .tab-content-card { background: white; padding: 40px; border-radius: 30px; border: 1px solid #e2e8f0; }
 
+        /* Visor de PDF personalizado */
+        .pdf-viewer { width: 100%; height: 75vh; border: none; border-radius: 10px; }
+        .modal-content { border-radius: 25px; border: none; overflow: hidden; background: #525659; }
+        .modal-header { background: #f8fafc; border-bottom: 1px solid #e2e8f0; }
+
         @media (max-width: 768px) {
             .display-1 { font-size: 2.8rem; text-align: center; }
             .hero { padding: 120px 0 40px; }
             .hero-img { max-width: 80%; margin-top: 30px; }
-            .nav-pills { flex-direction: row !important; overflow-x: auto; white-space: nowrap; display: flex; padding-bottom: 15px; margin-bottom: 20px; }
+            .nav-pills { flex-direction: row !important; overflow-x: auto; white-space: nowrap; display: flex; padding-bottom: 15px; }
             .nav-pills .nav-link { margin-right: 10px; margin-bottom: 0; padding: 10px 18px; font-size: 0.9rem; }
-            .tab-content-card { padding: 25px; }
         }
     </style>
 </head>
@@ -59,9 +64,31 @@
     <nav class="navbar fixed-top px-4">
         <div class="container d-flex justify-content-between">
             <a class="navbar-brand fw-bold" href="#">TEMPIS<span class="text-primary">DEV</span></a>
-            <button class="btn btn-primary rounded-pill px-4 fw-bold">Descargar CV</button>
+            <button type="button" class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm" data-bs-toggle="modal" data-bs-target="#cvModal">
+                Descargar CV
+            </button>
         </div>
     </nav>
+
+    <div class="modal fade" id="cvModal" tabindex="-1" aria-labelledby="cvModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title fw-bold" id="cvModalLabel">Curriculum Vitae - Juan Carlos López</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-0">
+                    <iframe src="CV_Juan_Carlos_Lopez_UX_Engineer.pdf" class="pdf-viewer"></iframe>
+                </div>
+                <div class="modal-footer border-0 bg-light">
+                    <button type="button" class="btn btn-secondary rounded-pill px-4" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="CV_Juan_Carlos_Lopez_UX_Engineer.pdf" download class="btn btn-primary rounded-pill px-4 fw-bold">
+                        <i class="fas fa-download me-2"></i> Descargar PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <header class="hero">
         <div class="container text-center text-md-start">
@@ -95,7 +122,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-4 col-12">
                 <div class="bento-item">
                     <h4 class="mb-3 text-primary"><i class="fas fa-palette me-2"></i>Stack Creativo</h4>
@@ -107,7 +133,6 @@
                     </div>
                 </div>
             </div>
-            
             <div class="col-12">
                 <div class="bento-item" style="background: #f0f7ff; border-left: 5px solid var(--primary);">
                     <div class="row align-items-center text-center text-md-start">
@@ -138,59 +163,35 @@
                 </div>
                 <div class="col-md-8 col-12 mt-4 mt-md-0">
                     <div class="tab-content tab-content-card shadow-sm">
-                        
                         <div class="tab-pane fade show active" id="dinex">
-                            <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                <h3 class="fw-bold">Dinex</h3>
-                                <span class="badge bg-light text-dark border p-2">Actualidad</span>
-                            </div>
+                            <h3 class="fw-bold">Dinex</h3>
                             <p class="text-primary fw-bold">Diseñador UX/UI Web & Mobile</p>
                             <ul class="list-style-custom">
-                                <li>Diseño de interfaces de alta seguridad para el sector de <strong>remesas</strong> internacionales.</li>
-                                <li>Optimización de flujos de usuario en aplicaciones móviles y web para reducir fricción.</li>
-                                <li>Creación de prototipos interactivos que mejoraron la comunicación entre producto y desarrollo.</li>
+                                <li>Diseño de interfaces financieras de alta seguridad para remesas internacionales.</li>
+                                <li>Optimización de flujos transaccionales críticos en banca móvil.</li>
                             </ul>
                         </div>
-
                         <div class="tab-pane fade" id="jelp">
-                            <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                <h3 class="fw-bold">Jelp</h3>
-                                <span class="badge bg-light text-dark border p-2">2022 - 2024</span>
-                            </div>
-                            <p class="text-primary fw-bold">Fullstack Developer (Web, Mobile & Desktop)</p>
+                            <h3 class="fw-bold">Jelp</h3>
+                            <p class="text-primary fw-bold">Fullstack Developer</p>
                             <ul class="list-style-custom">
-                                <li>Desarrollo integral de soluciones utilizando <strong>PHP, JS, MySQL, HTML y CSS</strong>.</li>
-                                <li>Implementación de arquitecturas de bases de datos eficientes para gestión de servicios masivos.</li>
-                                <li>Garantía de coherencia visual y funcional en todo el ecosistema digital de la plataforma.</li>
+                                <li>Desarrollo escalable utilizando PHP, JavaScript, MySQL, HTML y CSS.</li>
                             </ul>
                         </div>
-
                         <div class="tab-pane fade" id="secam">
-                            <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                <h3 class="fw-bold text-wrap">Sección Amarilla (ADN Digital)</h3>
-                                <span class="badge bg-light text-dark border p-2">2020 - 2022</span>
-                            </div>
-                            <p class="text-primary fw-bold">Diseñador Web & Fullstack Developer</p>
+                            <h3 class="fw-bold">Sección Amarilla</h3>
+                            <p class="text-primary fw-bold">Diseñador Web & Fullstack</p>
                             <ul class="list-style-custom">
-                                <li>Diseño de maquetas UX/UI profesionales utilizando <strong>Adobe XD</strong> para marcas nacionales.</li>
-                                <li>Ejecución de <strong>pruebas de usabilidad</strong> y ajustes basados en comportamiento real de usuario.</li>
-                                <li>Desarrollo de sitios web responsivos optimizados bajo estándares modernos de Angular.</li>
+                                <li>Prototipado en Adobe XD y validación con pruebas de usabilidad.</li>
                             </ul>
                         </div>
-
                         <div class="tab-pane fade" id="vector">
-                            <div class="d-flex justify-content-between align-items-start flex-wrap">
-                                <h3 class="fw-bold">Vector Casa de Bolsa</h3>
-                                <span class="badge bg-light text-dark border p-2">Trayectoria Especializada</span>
-                            </div>
-                            <p class="text-primary fw-bold">Desarrollador React Native & UX</p>
+                            <h3 class="fw-bold">Vector Casa de Bolsa</h3>
+                            <p class="text-primary fw-bold">Desarrollador React Native</p>
                             <ul class="list-style-custom">
-                                <li>Construcción de pantallas móviles híbridas utilizando <strong>TypeScript</strong> para flujos financieros.</li>
-                                <li>Consumo e integración de APIs críticas del equipo backend para actualización en tiempo real.</li>
-                                <li>Colaboración en el diseño de componentes móviles enfocados en la seguridad del inversionista.</li>
+                                <li>Construcción de pantallas móviles financieras con TypeScript.</li>
                             </ul>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -201,8 +202,8 @@
         <p class="text-muted small">JUAN CARLOS | © 2026 | San Nicolás de los Garza, NL</p>
     </footer>
 
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
         var typed = new Typed('#typed', {
             strings: ['Desarrollador', 'Diseñador', 'Ingeniero'],
