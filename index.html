@@ -5,201 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Juan Carlos | UX Engineer & Sales Leader</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     
     <style>
         :root {
-            --primary-blue: #0061ff;
-            --dark-navy: #051937;
-            --light-bg: #f8fbff;
+            --primary: #0061ff;
+            --dark: #051937;
+            --bg: #fdfdfd;
         }
 
-        body {
-            font-family: 'Quicksand', sans-serif;
-            color: var(--dark-navy);
-            background-color: #fff;
-            overflow-x: hidden;
+        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); color: var(--dark); overflow-x: hidden; }
+        h1, h2, h3, .typed-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; }
+
+        /* Navbar */
+        .navbar { background: rgba(255,255,255,0.8); backdrop-filter: blur(15px); border-bottom: 1px solid #eee; }
+
+        /* Hero Moderno */
+        .hero { padding: 160px 0 80px; background: radial-gradient(circle at 90% 10%, #e6f0ff 0%, #ffffff 60%); }
+        .display-1 { font-size: 5.5rem; line-height: 0.9; margin-bottom: 20px; }
+        .hero-img { max-width: 100%; transition: transform 0.3s ease; }
+        .hero-img:hover { transform: scale(1.02); }
+
+        /* Bento Grid de Logros */
+        .bento-grid { padding: 60px 0; }
+        .bento-item { 
+            background: white; border: 1px solid #eee; border-radius: 30px; 
+            padding: 40px; height: 100%; transition: 0.4s; 
+            display: flex; flex-direction: column; justify-content: center;
         }
+        .bento-item:hover { border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.05); }
+        .bento-main { background: var(--dark); color: white; }
+        .text-blue { color: var(--primary); }
 
-        h1, h2, h3, .nav-link { font-family: 'Space Grotesk', sans-serif; }
-
-        .navbar {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e2e8f0;
+        /* Experience Tabs */
+        .work-section { padding: 100px 0; background: #f8f9fc; }
+        .nav-pills .nav-link {
+            color: #888; background: white; border: 1px solid #eee;
+            padding: 20px; margin-bottom: 15px; border-radius: 20px; text-align: left;
         }
+        .nav-pills .nav-link.active { background: var(--primary) !important; color: white !important; box-shadow: 0 15px 30px rgba(0,97,255,0.2); }
 
-        .hero {
-            padding: 160px 0 100px;
-            background: linear-gradient(180deg, var(--light-bg) 0%, #ffffff 100%);
-        }
-
-        .display-1 { 
-            font-weight: 700; 
-            color: var(--dark-navy); 
-            line-height: 1.1;
-            min-height: 2.2em;
-        }
-        
-        #typed { font-size: 0.85em; }
-
-        .hero-img { max-width: 100%; height: auto; display: block; }
-
-        .about-section { padding: 80px 0; }
-        .description-text { font-size: 1.15rem; line-height: 1.8; color: #4a5568; }
-
-        /* Sección de Logros */
-        .stats-section { background: var(--dark-navy); color: white; padding: 60px 0; }
-        .stat-box h2 { color: var(--primary-blue); font-weight: 700; font-size: 2.5rem; margin-bottom: 5px; }
-        .stat-box p { font-size: 0.9rem; opacity: 0.8; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* Experiencia */
-        .work-area { padding: 100px 0; background-color: var(--light-bg); }
-        .nav-experience .nav-link {
-            color: #718096;
-            font-weight: 600;
-            padding: 18px;
-            margin-bottom: 10px;
-            border-radius: 12px;
-            background: white;
-            border: 1px solid #e2e8f0;
-            text-align: left;
-        }
-        .nav-experience .nav-link.active {
-            background-color: var(--primary-blue) !important;
-            color: white !important;
-        }
-
-        .tab-content-card {
-            background: white;
-            padding: 45px;
-            border-radius: 25px;
-            border: 1px solid #e2e8f0;
-        }
-
-        .highlight-box {
-            background: var(--light-bg);
-            border-left: 4px solid var(--primary-blue);
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 0 15px 15px 0;
-        }
+        .project-card { background: white; border-radius: 35px; padding: 50px; border: 1px solid #eee; }
     </style>
 </head>
 <body>
 
     <nav class="navbar fixed-top px-4">
         <div class="container d-flex justify-content-between">
-            <a class="navbar-brand fw-bold" href="#">TEMPISDEV</a>
+            <a class="navbar-brand fw-bold" href="#">TEMPIS<span class="text-primary">DEV</span></a>
             <button class="btn btn-primary rounded-pill px-4 fw-bold shadow-sm">Descargar CV</button>
         </div>
     </nav>
 
     <header class="hero">
-        <div class="container">
+        <div class="container text-center text-md-start">
             <div class="row align-items-center">
-                <div class="col-md-7 mb-5">
-                    <p class="fs-4 text-muted mb-2">Hola, soy Carlos</p>
-                    <h1 class="display-1">Soy <br><span id="typed" class="text-primary text-wrap"></span></h1>
+                <div class="col-md-7">
+                    <p class="text-primary fw-bold mb-2">Ingeniero de Sistemas & Leader Sales</p>
+                    <h1 class="display-1">Hago que las <br><span id="typed" class="text-primary"></span> pasen.</h1>
+                    <p class="fs-5 text-muted mt-4 pe-md-5">
+                        No solo diseño interfaces o escribo código; construyo soluciones que generan millones. Mi perfil une el rigor de la ingeniería con la persuasión del cierre de ventas.
+                    </p>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 mt-5 mt-md-0">
                     <img src="foto-principal.webp" alt="Juan Carlos" class="hero-img">
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="about-section" id="about">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h2 class="fw-bold fs-1">Perfil <br><span class="text-primary">Estratégico</span></h2>
+    <section class="bento-grid container">
+        <div class="row g-4">
+            <div class="col-md-8">
+                <div class="bento-item bento-main">
+                    <h3 class="display-4 text-blue">$15,000,000+</h3>
+                    <p class="fs-4">Pesos generados en ventas técnicas cerradas.</p>
+                    <p class="text-muted">Estrategia basada en persuasión y conocimiento profundo del producto.</p>
                 </div>
-                <div class="col-md-8">
-                    <p class="description-text">
-                        Como <strong>Ingeniero en Sistemas Computacionales</strong> especializado en <strong>UX/UI</strong>, poseo una visión única que une la lógica técnica con la psicología del usuario. Mi curiosidad por entender el "porqué" de las cosas me ha llevado a diseñar soluciones que no solo funcionan, sino que impactan en el negocio.
-                    </p>
-                    <div class="highlight-box">
-                        <p class="mb-0 fw-bold text-dark">Liderazgo Comercial & Resultados:</p>
-                        <p class="mb-0">Como Gerente de Ventas, he perfeccionado el arte de la persuasión y la negociación técnica, logrando el cierre de más de <strong>300 proyectos</strong> con una facturación superior a los <strong>$15M MXN</strong>.</p>
-                    </div>
-                    <p class="description-text">
-                        Utilizo metodologías de venta consultiva y herramientas de análisis de datos para entender la necesidad real del cliente antes de proponer una línea de código o un diseño.
-                    </p>
+            </div>
+            <div class="col-md-4">
+                <div class="bento-item">
+                    <h3 class="display-5 text-primary">+300</h3>
+                    <p class="fw-bold">Proyectos Solares</p>
+                    <p class="small text-muted">Vendidos y supervisados desde la ingeniería hasta el cierre comercial.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="bento-item text-center">
+                    <i class="fas fa-code fa-3x text-primary mb-3"></i>
+                    <h4 class="fw-bold">Fullstack</h4>
+                    <p class="small text-muted">Angular, PHP, MySQL & Flutter.</p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="bento-item">
+                    <h4 class="fw-bold">UX/UI & Adobe Suite</h4>
+                    <p>Diseño de interfaces financieras en <strong>Dinex</strong> y soluciones creativas con Photoshop, Illustrator y After Effects.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="stats-section text-center">
+    <section class="work-section" id="work">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4 stat-box">
-                    <h2>+300</h2>
-                    <p class="mb-0">Proyectos Vendidos</p>
-                </div>
-                <div class="col-md-4 stat-box">
-                    <h2>$15M+</h2>
-                    <p class="mb-0">Pesos Facturados</p>
-                </div>
-                <div class="col-md-4 stat-box">
-                    <h2>100%</h2>
-                    <p class="mb-0">Enfoque en Resultados</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="work-area" id="work">
-        <div class="container">
-            <h2 class="fw-bold mb-5">Trayectoria Profesional</h2>
+            <h2 class="fw-bold mb-5 fs-1">Trayectoria <span class="text-primary">Real</span></h2>
             <div class="row">
                 <div class="col-md-4">
-                    <div class="nav flex-column nav-experience" id="v-pills-tab" role="tablist">
-                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#solar">☀️ Gerente de Ventas & Sistemas Solares</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dinex">🏦 DINEX (2024 - Actualidad)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022 - 2024)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#amarilla">📒 Sección Amarilla (2020 - 2022)</button>
+                    <div class="nav flex-column nav-pills" role="tablist">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#sales">☀️ Gerencia de Ventas & Solar</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#dinex">🏦 Dinex (2024-Hoy)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">🛠️ Jelp (2022-2024)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#amarilla">📒 Sección Amarilla (2020-2022)</button>
                     </div>
                 </div>
                 <div class="col-md-8">
-                    <div class="tab-content tab-content-card">
-                        
-                        <div class="tab-pane fade show active" id="solar">
-                            <h3 class="fw-bold mb-3">Gerente de Ventas & Desarrollador Solar</h3>
-                            <p>Lidero la división comercial y técnica, transformando propuestas complejas en soluciones energéticas rentables.</p>
-                            <div class="mt-3">
-                                <p><strong>Estrategia de Ventas:</strong> Implementación de cierres de alto impacto y manejo de objeciones técnicas basado en datos reales.</p>
-                                <p><strong>Desarrollo de Producto:</strong> Creación de software propio para el cálculo y layout de instalaciones, facilitando la visualización del retorno de inversión para el cliente.</p>
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active project-card" id="sales">
+                            <h2 class="fw-bold">Gerente de Ventas & Sistemas</h2>
+                            <p class="text-primary fw-bold">Resultados Tangibles</p>
+                            <p>Lidero la arquitectura técnica y el cierre comercial de proyectos fotovoltaicos. Desarrollé software propio para automatizar el layout de 8 paneles y optimizar tiempos de venta.</p>
+                            <div class="mt-4 p-4 bg-light rounded-4">
+                                <p class="mb-0"><strong>Habilidad Clave:</strong> Persuasión técnica y manejo de CRM para el cumplimiento de metas de millones de pesos.</p>
                             </div>
                         </div>
-
-                        <div class="tab-pane fade" id="dinex">
-                            <h3 class="fw-bold mb-3">DINEX</h3>
-                            <p class="text-primary fw-bold">Diseñador UX/UI</p>
-                            <p>Ene 2024 - Hoy. Optimización de flujos financieros mediante diseño centrado en el usuario.</p>
+                        <div class="tab-pane fade project-card" id="dinex">
+                            <h2 class="fw-bold">Dinex</h2>
+                            <p class="text-primary fw-bold">UX/UI Designer</p>
+                            <p>Diseño de experiencias financieras en 2024. Mi enfoque es convertir procesos bancarios tediosos en interfaces fluidas y seguras.</p>
                         </div>
-
-                        <div class="tab-pane fade" id="jelp">
-                            <h3 class="fw-bold mb-3">JELP</h3>
-                            <p class="text-primary fw-bold">Desarrollador Fullstack & UX</p>
-                            <p>Desarrollo escalable con PHP y MySQL, manteniendo un estándar visual de excelencia.</p>
+                        <div class="tab-pane fade project-card" id="jelp">
+                            <h2 class="fw-bold">Jelp</h2>
+                            <p class="text-primary fw-bold">Fullstack Developer</p>
+                            <p>Desarrollo robusto con PHP, MySQL y diseño centrado en el usuario de 2022 a 2024.</p>
                         </div>
-
-                        <div class="tab-pane fade" id="amarilla">
-                            <h3 class="fw-bold mb-3">Sección Amarilla (ADN Digital)</h3>
-                            <p class="text-primary fw-bold">Diseñador & Desarrollador Fullstack</p>
-                            <p>2020 - 2022. Creación de mockups UX/UI y desarrollo de sitios web interactivos con Angular.</p>
+                        <div class="tab-pane fade project-card" id="amarilla">
+                            <h2 class="fw-bold">Sección Amarilla</h2>
+                            <p class="text-primary fw-bold">Fullstack (2020-2022)</p>
+                            <p>Mi base como desarrollador donde implementé soluciones con Angular y maquetación UX/UI avanzada.</p>
                         </div>
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-5 text-center border-top">
+    <footer class="py-5 text-center border-top bg-white">
         <p class="text-muted small">JUAN CARLOS | © 2026 | San Nicolás de los Garza, NL</p>
     </footer>
 
@@ -207,9 +158,9 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         var typed = new Typed('#typed', {
-            strings: ['Diseñador UX/UI', 'Ingeniero de Sistemas', 'Gerente de Ventas', 'Fullstack Developer'],
-            typeSpeed: 50,
-            backSpeed: 30,
+            strings: ['cosas', 'ventas', 'interfaces', 'soluciones'],
+            typeSpeed: 60,
+            backSpeed: 40,
             loop: true
         });
     </script>
