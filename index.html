@@ -6,8 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
@@ -16,90 +14,79 @@
         :root {
             --azul-claro: #007bff;
             --azul-oscuro: #051937;
-            --gris-suave: #f9fbfd;
+            --gris-suave: #f8f9fa;
         }
 
         body {
             font-family: 'Quicksand', sans-serif;
-            background-color: #fff;
             color: var(--azul-oscuro);
         }
 
-        /* Navbar estilo original */
         .navbar {
-            background: rgba(255, 255, 255, 0.95);
-            border-bottom: 1px solid #f1f1f1;
-            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #eee;
         }
 
-        /* Sección Hero - Aquí va tu imagen libre */
         .hero-section {
             padding: 100px 0 0 0;
             background: linear-gradient(180deg, #f0f7ff 0%, #ffffff 100%);
-            overflow: hidden;
         }
 
-        .p2 { font-size: 4.5rem; font-weight: 700; line-height: 1; margin-bottom: 10px; }
+        .p2 { font-size: 4.5rem; font-weight: 700; margin-bottom: 5px; }
         .p3 { font-size: 1.8rem; color: var(--azul-claro); font-weight: 500; }
 
-        /* La imagen tal cual la pediste: sin div circular ni cortes */
+        /* Tu imagen principal tal cual la pediste */
         .img-principal {
             max-width: 100%;
             height: auto;
-            display: block;
-            margin-top: 20px;
         }
 
-        /* Experiencia con el estilo de tabs original pero azul */
         .bg-apps { background-color: var(--gris-suave); padding: 80px 0; }
         
+        /* Estilo de Tabs Lateral */
         .nav-pills .nav-link {
             color: var(--azul-oscuro);
             font-weight: 600;
             padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
+            margin-bottom: 8px;
+            border-radius: 10px;
             text-align: left;
-            border: 1px solid transparent;
+            transition: 0.3s;
         }
 
         .nav-pills .nav-link.active {
             background-color: var(--azul-claro) !important;
-            color: white !important;
         }
 
         .inf-t {
             background: white;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 25px rgba(0,0,0,0.03);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
         }
 
-        .btn-redes {
-            width: 40px; height: 40px;
-            background: var(--azul-oscuro);
-            color: white;
-            display: inline-flex; align-items: center; justify-content: center;
-            border-radius: 8px; transition: 0.3s; margin-right: 10px;
-            text-decoration: none;
-        }
-        .btn-redes:hover { background: var(--azul-claro); transform: translateY(-3px); }
+        /* Imágenes de Proyectos */
+        .img-project-main { border-radius: 15px; margin-bottom: 20px; width: 100%; }
+        .img-project-grid { border-radius: 10px; width: 100%; margin-top: 15px; transition: 0.3s; }
+        .img-project-grid:hover { transform: scale(1.05); }
+
+        .contexto { font-weight: 700; color: var(--azul-claro); font-size: 1.2rem; }
     </style>
 
-    <title>Juan Carlos | Portfolio 2026</title>
+    <title>Juan Carlos | Portfolio</title>
 </head>
 
 <body>
 
-    <nav class="navbar fixed-top">
+    <nav class="navbar fixed-top px-3">
         <div class="container">
             <a class="navbar-brand" href="#"><img src="assets/img/jc-logo.png" width="50"></a>
-            <div class="d-flex gap-4 d-none d-md-flex">
+            <div class="d-none d-md-flex gap-4">
                 <a href="#" class="text-decoration-none text-dark fw-bold">Home</a>
-                <a href="#abt" class="text-decoration-none text-dark fw-bold">About me</a>
-                <a href="#xpe" class="text-decoration-none text-dark fw-bold">Experience</a>
+                <a href="#xpe" class="text-decoration-none text-dark fw-bold">Projects</a>
             </div>
-            <button class="btn btn-primary rounded-pill px-4 fw-bold">Download CV</button>
+            <button class="btn btn-primary rounded-pill px-4">Download CV</button>
         </div>
     </nav>
 
@@ -110,11 +97,6 @@
                     <p class="fs-4 mb-0">Hello, I'm</p>
                     <h1 class="p2">JUAN CARLOS</h1>
                     <p class="p3">UX/UI Designer & Fullstack Developer</p>
-                    <div class="mt-4">
-                        <a href="#" class="btn-redes"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="btn-redes"><i class="fab fa-github"></i></a>
-                        <a href="#" class="btn-redes"><i class="fab fa-behance"></i></a>
-                    </div>
                 </div>
                 <div class="col-md-6 text-center animate__animated animate__fadeInUp">
                     <img src="foto-principal.webp" alt="Juan Carlos" class="img-principal">
@@ -125,44 +107,77 @@
 
     <section class="bg-apps" id="xpe">
         <div class="container">
-            <h2 class="fw-bold mb-5 text-center">Trayectoria Profesional</h2>
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#dinex">DINEX (Actualidad)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#solar">Sistema Paneles Solares</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#jelp">Jelp (2022-2024)</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#vtro">Vitrocar</button>
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#estec">Esteciapp</button>
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#dinex">DINEX (2026)</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#manos">Manos en Acción</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#kabum">Kabum!</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#esteci">Esteciapp</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#vitro">Vitrocar</button>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="tab-content">
                         <div class="tab-pane fade show active inf-t" id="dinex">
-                            <h3 class="fw-bold">DINEX</h3>
-                            <p class="text-primary fw-bold">UX/UI Designer</p>
-                            <p>Especializado en el diseño de interfaces de servicios financieros, optimizando flujos de transacción y experiencia de usuario.</p>
+                            <h2 class="fw-bold">DINEX</h2>
+                            <p class="contexto">Current Role</p>
+                            <p>Diseño de experiencias financieras avanzadas. Mi enfoque aquí es el minimalismo y la eficiencia transaccional.</p>
                         </div>
-                        <div class="tab-pane fade inf-t" id="solar">
-                            <h3 class="fw-bold">Gestión de Paneles Solares</h3>
-                            <p class="text-primary fw-bold">Proyecto Fullstack Personal</p>
-                            <p>Desarrollo de una plataforma para el cálculo y diseño técnico de instalaciones fotovoltaicas, integrando lógica de backend y UI minimalista.</p>
+
+                        <div class="tab-pane fade inf-t" id="manos">
+                            <h2 class="fw-bold">Manos en Acción</h2>
+                            <img src="assets/img/Manos-en-accion/manosenaccion .png" class="img-project-main shadow-sm">
+                            <p class="contexto">Context</p>
+                            <p>App para el municipio de El Mante para unir a la comunidad en eventos de caridad. Trabajé como UX/UI Designer (Adobe XD) y Front-end (Flutter).</p>
+                            <div class="row">
+                                <div class="col-4"><img src="assets/img/Manos-en-accion/1.png" class="img-project-grid"></div>
+                                <div class="col-4"><img src="assets/img/Manos-en-accion/4.png" class="img-project-grid"></div>
+                                <div class="col-4"><img src="assets/img/Manos-en-accion/5.png" class="img-project-grid"></div>
+                            </div>
                         </div>
-                        <div class="tab-pane fade inf-t" id="jelp">
-                            <h3 class="fw-bold">JELP</h3>
-                            <p class="text-primary fw-bold">Fullstack Developer & UX</p>
-                            <p>Desarrollo de aplicaciones robustas con PHP, MySQL y diseño de interfaces intuitivas.</p>
+
+                        <div class="tab-pane fade inf-t" id="kabum">
+                            <h2 class="fw-bold">Kabum!</h2>
+                            <img src="assets/img/Kabum/fondo-kabum-2.png" class="img-project-main">
+                            <p class="contexto">Context</p>
+                            <p>Plataforma dinámica de quizzes para el Instituto Tecnológico de El Mante. Desarrollada con Angular, JS, HTML y CSS.</p>
+                            <div class="row">
+                                <div class="col-6"><img src="assets/img/Kabum/Web-1920-–-34.webp" class="img-project-grid"></div>
+                                <div class="col-6"><img src="assets/img/Kabum/Web-1920-–-2.webp" class="img-project-grid"></div>
+                            </div>
                         </div>
-                        <div class="tab-pane fade inf-t" id="vtro"><h3>Vitrocar</h3><p>Rediseño UI de sitio principal.</p></div>
-                        <div class="tab-pane fade inf-t" id="estec"><h3>Esteciapp</h3><p>App de gestión de estacionamientos.</p></div>
+
+                        <div class="tab-pane fade inf-t" id="esteci">
+                            <h2 class="fw-bold">Esteciapp</h2>
+                            <img src="assets/img/Esteciapp/fondo-esteci.png" class="img-project-main">
+                            <p class="contexto">Context</p>
+                            <p>Control de accesos para estacionamientos. Una solución innovadora con notificaciones de tiempo y control de gastos.</p>
+                            <div class="row">
+                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_1.webp" class="img-project-grid"></div>
+                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_3.webp" class="img-project-grid"></div>
+                                <div class="col-4"><img src="assets/img/Esteciapp/iPhone_13,_12_Pro_Max_226128147_5.webp" class="img-project-grid"></div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade inf-t" id="vitro">
+                            <h2 class="fw-bold">Vitrocar</h2>
+                            <img src="assets/img/Vitrocar/fondo.png" class="img-project-main">
+                            <p class="contexto">Context</p>
+                            <p>Rediseño de la UI principal respetando identidad de marca corporativa para entrega directa a desarrollo.</p>
+                            <div class="row">
+                                <div class="col-6"><img src="assets/img/Vitrocar/Web_1920_226128147_10.webp" class="img-project-grid"></div>
+                                <div class="col-6"><img src="assets/img/Vitrocar/Web_1920_226128147_11.webp" class="img-project-grid"></div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-5 text-center bg-white">
-        <p class="text-muted small">© 2026 Tempisdev | San Nicolás de los Garza, NL</p>
+    <footer class="py-5 text-center bg-white border-top">
+        <p class="text-muted">© 2026 Tempisdev | All rights reserved</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
