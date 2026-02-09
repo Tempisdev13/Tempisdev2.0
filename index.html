@@ -47,24 +47,27 @@
 
         /* --- ESTILOS SUNSOLAR ECOSYSTEM --- */
         .sunsolar-section { padding: 100px 0; background: #f8faff; border-radius: 50px 50px 0 0; }
+        
+        /* Tarjetas grandes para pantallas */
         .sun-card {
-            background: white; border: 1px solid #eef2f6; border-radius: 20px; overflow: hidden;
-            transition: all 0.3s ease; height: 100%;
+            background: white; border: 1px solid #eef2f6; border-radius: 24px; overflow: hidden;
+            transition: all 0.4s ease; height: 100%; box-shadow: 0 10px 30px rgba(0,0,0,0.02);
         }
-        .sun-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,61,255,0.15); border-color: var(--primary); }
+        .sun-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(0,61,255,0.12); border-color: var(--primary); }
         
-        .sun-card-img-container {
-            background: #f1f5f9; padding: 20px; border-bottom: 1px solid #eef2f6;
-            display: flex; align-items: center; justify-content: center; height: 200px; /* Altura fija para uniformidad */
-        }
-        .sun-card-img { max-width: 100%; max-height: 100%; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        /* Imagen completa sin contenedor gris */
+        .sun-card-img { width: 100%; height: auto; display: block; border-bottom: 1px solid #f1f1f1; }
         
-        .sun-card-body { padding: 25px; }
-        .badge-feature { background: rgba(0, 97, 255, 0.08); color: var(--primary); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 700; margin-right: 5px; }
+        .sun-card-body { padding: 30px; }
+        .badge-feature { background: rgba(0, 97, 255, 0.08); color: var(--primary); padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; margin-right: 5px; }
 
-        /* Mobile App Showcase */
-        .mobile-showcase { background: #0b1120; border-radius: 40px; padding: 60px 30px; margin-top: 60px; color: white; }
-        .app-mockup { width: 100%; max-width: 160px; border-radius: 20px; border: 4px solid #2d3748; box-shadow: 0 15px 30px rgba(0,0,0,0.5); display: block; margin: 0 auto; transition: 0.3s; }
+        /* Mobile Showcase Adaptado */
+        .mobile-showcase { background: #0b1120; border-radius: 40px; padding: 60px 30px; margin-top: 80px; color: white; position: relative; overflow: hidden; }
+        .mobile-showcase::before {
+            content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+            background: radial-gradient(circle, rgba(0,97,255,0.1) 0%, rgba(0,0,0,0) 50%); pointer-events: none;
+        }
+        .app-mockup { width: 100%; max-width: 180px; border-radius: 24px; border: 6px solid #2d3748; box-shadow: 0 20px 40px rgba(0,0,0,0.6); display: block; margin: 0 auto; transition: 0.3s; }
         .app-mockup:hover { transform: scale(1.05); border-color: var(--primary); }
 
         /* Botón Flotante */
@@ -79,7 +82,6 @@
         .pulse-white { animation: pulse-w 2s infinite; }
         @keyframes pulse-w { 0% { box-shadow: 0 0 0 0px rgba(255,255,255,0.4); } 100% { box-shadow: 0 0 0 15px rgba(255,255,255,0); } }
 
-        /* Visor de PDF personalizado */
         .pdf-viewer { width: 100%; height: 75vh; border: none; border-radius: 10px; }
         .modal-content { border-radius: 25px; border: none; overflow: hidden; background: #525659; }
 
@@ -87,7 +89,7 @@
             .display-1 { font-size: 2.8rem; text-align: center; }
             .hero { padding: 120px 0 40px; }
             .nav-pills { flex-direction: row !important; overflow-x: auto; white-space: nowrap; display: flex; padding-bottom: 15px; }
-            .app-mockup { max-width: 120px; margin-bottom: 20px; }
+            .app-mockup { max-width: 130px; margin-bottom: 20px; }
         }
     </style>
 </head>
@@ -263,98 +265,93 @@
                 </p>
                 <div class="mt-3">
                     <span class="badge bg-dark p-2 me-2">Fullstack Engineering</span>
-                    <span class="badge bg-primary p-2">UX/UI Design</span>
+                    <span class="badge bg-primary p-2">Responsive Web App</span>
                 </div>
             </div>
 
             <div class="row g-4 mb-5">
-                <div class="col-md-4 col-sm-6">
+                <div class="col-lg-6 col-12">
                     <div class="sun-card">
-                        <div class="sun-card-img-container">
-                            <img src="login.png" class="sun-card-img" alt="Login">
-                        </div>
+                        <img src="login.png" class="sun-card-img" alt="Login">
                         <div class="sun-card-body">
-                            <h6 class="fw-bold">1. Autenticación Segura</h6>
-                            <p class="small text-muted mb-2">Portal de acceso con validación de roles (Admin/Gestor/Cliente) y seguridad encriptada.</p>
-                            <span class="badge-feature">Security</span><span class="badge-feature">Auth</span>
+                            <h5 class="fw-bold">1. Autenticación Segura</h5>
+                            <p class="text-muted mb-3">Portal de acceso optimizado para seguridad y rapidez. Gestiona múltiples roles desde un único punto de entrada.</p>
+                            <span class="badge-feature">Security</span><span class="badge-feature">Role Based Auth</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-lg-6 col-12">
                     <div class="sun-card">
-                        <div class="sun-card-img-container">
-                            <img src="dashboard.png" class="sun-card-img" alt="Dashboard">
-                        </div>
+                        <img src="dashboard.png" class="sun-card-img" alt="Dashboard">
                         <div class="sun-card-body">
-                            <h6 class="fw-bold">2. Dashboard Operativo</h6>
-                            <p class="small text-muted mb-2">Centro de comando con KPIs en tiempo real: generación energética y estatus de proyectos.</p>
-                            <span class="badge-feature">Data Viz</span><span class="badge-feature">Real-time</span>
+                            <h5 class="fw-bold">2. Dashboard Operativo</h5>
+                            <p class="text-muted mb-3">Visualización de datos críticos en tiempo real. Gráficos de generación energética y estatus global de proyectos.</p>
+                            <span class="badge-feature">Data Visualization</span><span class="badge-feature">Real-time</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-lg-6 col-12">
                     <div class="sun-card">
-                        <div class="sun-card-img-container">
-                            <img src="agenda.png" class="sun-card-img" alt="Agenda">
-                        </div>
+                        <img src="agenda.png" class="sun-card-img" alt="Agenda">
                         <div class="sun-card-body">
-                            <h6 class="fw-bold">3. Logística & Agenda</h6>
-                            <p class="small text-muted mb-2">Programación inteligente para visitas técnicas, instalaciones y mantenimientos.</p>
-                            <span class="badge-feature">Planning</span><span class="badge-feature">UX</span>
+                            <h5 class="fw-bold">3. Logística & Agenda</h5>
+                            <p class="text-muted mb-3">Sistema de scheduling inteligente para coordinar instalaciones y visitas técnicas de forma eficiente.</p>
+                            <span class="badge-feature">Planning</span><span class="badge-feature">UX Logic</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-lg-6 col-12">
                     <div class="sun-card">
-                        <div class="sun-card-img-container">
-                            <img src="clientes.png" class="sun-card-img" alt="Clientes">
-                        </div>
+                        <img src="clientes.png" class="sun-card-img" alt="Clientes">
                         <div class="sun-card-body">
-                            <h6 class="fw-bold">4. CRM de Clientes</h6>
-                            <p class="small text-muted mb-2">Expediente digital unificado para seguimiento de trámites CFE y documentación.</p>
+                            <h5 class="fw-bold">4. Expediente Digital (CRM)</h5>
+                            <p class="text-muted mb-3">Repositorio centralizado de clientes. Seguimiento granular de trámites CFE y documentación.</p>
                             <span class="badge-feature">CRM</span><span class="badge-feature">Database</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-lg-6 col-12">
                     <div class="sun-card">
-                        <div class="sun-card-img-container">
-                            <img src="leads.png" class="sun-card-img" alt="Leads">
-                        </div>
+                        <img src="leads.png" class="sun-card-img" alt="Leads">
                         <div class="sun-card-body">
-                            <h6 class="fw-bold">5. Pipeline de Ventas</h6>
-                            <p class="small text-muted mb-2">Gestión de prospectos (Leads) con etapas de conversión claras para el equipo comercial.</p>
-                            <span class="badge-feature">Sales</span><span class="badge-feature">Funnel</span>
+                            <h5 class="fw-bold">5. Pipeline de Ventas</h5>
+                            <p class="text-muted mb-3">Gestión de prospectos con embudo de conversión personalizado para el equipo comercial.</p>
+                            <span class="badge-feature">Sales Funnel</span><span class="badge-feature">Business Logic</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-md-4 col-sm-6">
+                <div class="col-lg-6 col-12">
                     <div class="sun-card">
-                        <div class="sun-card-img-container">
-                            <img src="cobranza.png" class="sun-card-img" alt="Cobranza">
-                        </div>
+                        <img src="cobranza.png" class="sun-card-img" alt="Cobranza">
                         <div class="sun-card-body">
-                            <h6 class="fw-bold">6. Módulo Financiero</h6>
-                            <p class="small text-muted mb-2">Control de pagos, facturación y alertas de cobranza automatizadas.</p>
-                            <span class="badge-feature">Fintech</span><span class="badge-feature">Logic</span>
+                            <h5 class="fw-bold">6. Módulo Financiero</h5>
+                            <p class="text-muted mb-3">Control total de facturación, pagos parciales y alertas automáticas de vencimiento.</p>
+                            <span class="badge-feature">Fintech</span><span class="badge-feature">Automation</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="col-12">
-                    <div class="sun-card d-flex flex-column flex-md-row align-items-center">
-                        <div class="sun-card-img-container w-100 w-md-50" style="height: auto; min-height: 200px;">
-                            <img src="Inventario.png" class="sun-card-img" alt="Inventario">
-                        </div>
-                        <div class="p-4 w-100 w-md-50">
-                            <h5 class="fw-bold">Gestión de Inventario Técnico</h5>
-                            <p class="text-muted">Control preciso de stock para paneles solares, inversores y estructuras. El sistema descuenta automáticamente los insumos al finalizar una instalación en la agenda.</p>
-                            <span class="badge-feature">Stock Control</span><span class="badge-feature">Automation</span>
+                    <div class="sun-card">
+                        <div class="row g-0 align-items-center">
+                            <div class="col-md-7">
+                                <img src="Inventario.png" class="sun-card-img border-bottom-0 border-end" alt="Inventario">
+                            </div>
+                            <div class="col-md-5">
+                                <div class="sun-card-body">
+                                    <h4 class="fw-bold">Gestión de Inventario</h4>
+                                    <p class="text-muted">Control de stock en tiempo real para paneles, inversores y estructuras. El sistema descuenta materiales automáticamente al cerrar una instalación.</p>
+                                    <div class="mt-3">
+                                        <span class="badge-feature">Stock Control</span>
+                                        <span class="badge-feature">Warehouse UX</span>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -362,39 +359,45 @@
 
             <div class="mobile-showcase">
                 <div class="row align-items-center">
-                    <div class="col-lg-5 ps-lg-5 mb-4 mb-lg-0 text-center text-lg-start">
-                        <h3 class="fw-bold mb-3">SunSolar Mobile</h3>
-                        <p class="opacity-75 mb-4">
-                            Extendimos la funcionalidad del sistema web a aplicaciones nativas para dos perfiles clave: el Cliente Final y el Gestor de Campo.
+                    <div class="col-lg-5 ps-lg-5 mb-5 mb-lg-0 text-center text-lg-start">
+                        <span class="text-primary fw-bold text-uppercase ls-1">Versatilidad Total</span>
+                        <h3 class="display-6 fw-bold text-white mb-3 mt-2">Una Plataforma,<br>Múltiples Experiencias</h3>
+                        <p class="opacity-75 mb-4 text-white">
+                            No son apps distintas, es un diseño inteligente. La interfaz se adapta dinámicamente detectando el dispositivo y el rol del usuario (Cliente vs. Gestor) para ofrecer las herramientas exactas que necesitan en campo.
                         </p>
-                        <div class="d-flex flex-column gap-3">
-                            <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
-                                <i class="fas fa-mobile-alt fa-2x text-primary me-3"></i>
-                                <div>
-                                    <strong>App Cliente:</strong> Monitoreo de producción y estatus de trámite CFE.
-                                </div>
+                        
+                        <div class="d-flex align-items-center mb-3 justify-content-center justify-content-lg-start">
+                            <div class="bg-primary rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                                <i class="fas fa-user text-white"></i>
                             </div>
-                            <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
-                                <i class="fas fa-tools fa-2x text-primary me-3"></i>
-                                <div>
-                                    <strong>App Gestor:</strong> Herramienta para instaladores en sitio.
-                                </div>
+                            <div class="text-white">
+                                <strong>Vista Cliente:</strong> Consulta de trámites y producción solar desde el móvil.
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center justify-content-center justify-content-lg-start">
+                            <div class="bg-primary rounded-circle p-2 me-3 d-flex align-items-center justify-content-center" style="width:40px; height:40px;">
+                                <i class="fas fa-hard-hat text-white"></i>
+                            </div>
+                            <div class="text-white">
+                                <strong>Vista Gestor:</strong> Herramientas técnicas para instalación en sitio.
                             </div>
                         </div>
                     </div>
+                    
                     <div class="col-lg-7">
                         <div class="row justify-content-center g-3">
                             <div class="col-4 text-center">
-                                <img src="cliente_tramite.png" class="app-mockup" alt="App Cliente">
-                                <p class="small mt-2 text-white-50">Login Cliente</p>
+                                <img src="cliente_tramite.png" class="app-mockup" alt="Vista Cliente">
+                                <p class="small mt-3 text-white-50 fw-bold">Rol Cliente</p>
                             </div>
                             <div class="col-4 text-center">
-                                <img src="cliente_tramiteyaingresado.png" class="app-mockup" alt="App Trámite">
-                                <p class="small mt-2 text-white-50">Seguimiento</p>
+                                <img src="cliente_tramiteyaingresado.png" class="app-mockup" alt="Vista Trámite">
+                                <p class="small mt-3 text-white-50 fw-bold">Estatus Trámite</p>
                             </div>
                             <div class="col-4 text-center">
-                                <img src="gestor.png" class="app-mockup" alt="App Gestor">
-                                <p class="small mt-2 text-white-50">Modo Gestor</p>
+                                <img src="gestor.png" class="app-mockup" alt="Vista Gestor">
+                                <p class="small mt-3 text-white-50 fw-bold">Rol Gestor</p>
                             </div>
                         </div>
                     </div>
