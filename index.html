@@ -21,8 +21,9 @@
         .navbar { background: rgba(255,255,255,0.85); backdrop-filter: blur(15px); border-bottom: 1px solid #f1f1f1; padding: 1rem 0; }
 
         .hero { padding: 160px 0 80px; background: linear-gradient(180deg, #f8faff 0%, #ffffff 100%); }
-        .display-1 { font-size: calc(2.2rem + 2vw); line-height: 1.1; margin-bottom: 20px; min-height: 2.2em; }
-        .hero-img { max-width: 100%; height: auto; border-radius: 20px; display: block; margin: 0 auto; }
+        /* Ajuste para que el texto grande no rompa en móviles */
+        .display-1 { font-size: calc(2.2rem + 1.5vw); line-height: 1.1; margin-bottom: 20px; }
+        .hero-img { max-width: 100%; height: auto; border-radius: 20px; display: block; margin: 0 auto; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
         /* Bento Grid */
         .bento-grid { padding: 40px 0 80px; }
@@ -55,7 +56,6 @@
         .sun-card:hover { transform: translateY(-8px); box-shadow: 0 25px 50px rgba(0,61,255,0.12); border-color: var(--primary); }
         
         .sun-card-img { width: 100%; height: auto; display: block; border-bottom: 1px solid #f1f1f1; }
-        
         .sun-card-body { padding: 30px; }
         .badge-feature { background: rgba(0, 97, 255, 0.08); color: var(--primary); padding: 6px 12px; border-radius: 8px; font-size: 0.8rem; font-weight: 700; margin-right: 5px; }
 
@@ -78,18 +78,22 @@
             opacity: 1; pointer-events: auto;
         }
         .btn-project-float:hover { transform: scale(1.05); color: white; background: #0052d4; }
-        /* Clase para ocultar el botón */
         .btn-project-float.hidden { opacity: 0; pointer-events: none; }
         
         .pulse-white { animation: pulse-w 2s infinite; }
         @keyframes pulse-w { 0% { box-shadow: 0 0 0 0px rgba(255,255,255,0.4); } 100% { box-shadow: 0 0 0 15px rgba(255,255,255,0); } }
 
+        /* Iconos Sociales Footer */
+        .social-link { color: #6c757d; font-size: 1.5rem; margin: 0 15px; transition: 0.3s; }
+        .social-link:hover { color: var(--primary); transform: translateY(-3px); }
+
         .pdf-viewer { width: 100%; height: 75vh; border: none; border-radius: 10px; }
         .modal-content { border-radius: 25px; border: none; overflow: hidden; background: #525659; }
 
         @media (max-width: 768px) {
-            .display-1 { font-size: 2.8rem; text-align: center; }
+            .display-1 { font-size: 2.5rem; text-align: center; }
             .hero { padding: 120px 0 40px; }
+            .hero-img { margin-top: 40px; max-width: 80%; }
             .nav-pills { flex-direction: row !important; overflow-x: auto; white-space: nowrap; display: flex; padding-bottom: 15px; }
             .app-mockup { max-width: 130px; margin-bottom: 20px; }
         }
@@ -134,7 +138,10 @@
         <div class="container text-center text-md-start">
             <div class="row align-items-center">
                 <div class="col-md-7">
-                    <h1 class="display-1">Soy <br><span id="typed" class="text-primary"></span></h1>
+                    <h1 class="display-1 fw-bold">Hola, soy <br><span class="text-primary">Juan Carlos</span></h1>
+                    <h2 class="fs-2 text-muted mt-3 fw-normal">
+                        y soy <span id="typed" class="text-dark fw-bold"></span>
+                    </h2>
                     <p class="fs-5 text-muted mt-4">
                         Ingeniero de Sistemas enfocado en la arquitectura técnica y el diseño UX/UI para productos digitales escalables.
                     </p>
@@ -263,7 +270,7 @@
                 <h6 class="text-primary fw-bold text-uppercase">Desarrollo Integral (End-to-End)</h6>
                 <h2 class="display-4 fw-bold">SunSolar <span class="text-primary">Ecosystem</span></h2>
                 <p class="text-muted mx-auto" style="max-width: 800px;">
-                    Plataforma completa de gestión de energía fotovoltaica. Este proyecto no es solo un diseño; es una solución programada desde cero abarcando <strong>Análisis, Diseño, Base de Datos y Desarrollo Fullstack</strong>.
+                    Plataforma completa de gestión de energía fotovoltaica. Este proyecto abarca todo el ciclo de ingeniería: <strong>Análisis, Diseño, Base de Datos y Desarrollo Fullstack</strong>.
                 </p>
                 <div class="mt-4 d-flex justify-content-center flex-wrap gap-2">
                     <span class="badge bg-dark p-2 rounded-pill px-3">Arquitectura de Software</span>
@@ -375,7 +382,7 @@
                                 <i class="fas fa-user text-white"></i>
                             </div>
                             <div class="text-white">
-                                <strong>Rol Cliente:</strong> Solicitudes de servicio, reportes de mantenimiento y monitoreo de trámites.
+                                <strong>Rol Cliente:</strong> Solicitudes de servicio, reportes de mantenimiento y seguimiento de trámites CFE.
                             </div>
                         </div>
 
@@ -411,13 +418,17 @@
     </section>
 
     <footer class="py-5 text-center bg-white border-top">
-        <p class="text-muted small">JUAN CARLOS | © 2026 | San Nicolás de los Garza, NL</p>
+        <div class="mb-3">
+            <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="mailto:tuemail@ejemplo.com" class="social-link"><i class="fas fa-envelope"></i></a>
+        </div>
+        <p class="text-muted small mb-0">JUAN CARLOS | © 2026 | San Nicolás de los Garza, NL</p>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script>
-        // Efecto de escritura
         var typed = new Typed('#typed', {
             strings: ['Desarrollador', 'Diseñador', 'Ingeniero'],
             typeSpeed: 60,
@@ -425,7 +436,6 @@
             loop: true
         });
 
-        // Script para ocultar el botón flotante al llegar al proyecto
         document.addEventListener("DOMContentLoaded", function() {
             const floatBtn = document.getElementById('floatBtn');
             const targetSection = document.getElementById('sunsolar-ecosystem');
@@ -433,12 +443,12 @@
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        floatBtn.classList.add('hidden'); // Oculta el botón
+                        floatBtn.classList.add('hidden'); 
                     } else {
-                        floatBtn.classList.remove('hidden'); // Muestra el botón
+                        floatBtn.classList.remove('hidden');
                     }
                 });
-            }, { threshold: 0.1 }); // Se activa cuando el 10% de la sección es visible
+            }, { threshold: 0.1 }); 
 
             observer.observe(targetSection);
         });
